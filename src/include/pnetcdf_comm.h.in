@@ -27,6 +27,8 @@ typedef MPI_Datatype PNC_Datatype;
 #define PNC_DATATYPE_NULL  MPI_DATATYPE_NULL
 
 #else
+#include <netcdf.h>
+
 #ifdef PNETCDF_PUBLIC_API
 #undef PNETCDF_PUBLIC_API
 #endif
@@ -52,6 +54,7 @@ typedef MPI_Datatype PNC_Datatype;
 typedef struct PNC_Comm_obj    *PNC_Comm;
 typedef struct PNC_Info_obj    *PNC_Info;
 typedef struct PNC_Datatype_obj *PNC_Datatype;
+typedef long long PNC_Offset;
 
 #define PNC_COMM_WORLD     ((PNC_Comm)0)
 #define PNC_COMM_SELF      ((PNC_Comm)1)
@@ -74,6 +77,49 @@ ncmpix_create(PNC_Comm comm, const char *path, int cmode, PNC_Info info,
 PNETCDF_PUBLIC_API int
 ncmpix_open(PNC_Comm comm, const char *path, int omode, PNC_Info info,
             int *ncidp);
+
+PNETCDF_PUBLIC_API const char*
+ncmpix_strerror(int err);
+
+PNETCDF_PUBLIC_API int
+ncmpix_close(int ncid);
+
+PNETCDF_PUBLIC_API int
+ncmpix_def_dim(int ncid, const char *name, PNC_Offset len, int *idp);
+
+PNETCDF_PUBLIC_API int
+ncmpix_def_var(int ncid, const char *name, nc_type xtype, int ndims,
+               const int *dimids, int *varidp);
+
+PNETCDF_PUBLIC_API int
+ncmpix_put_att_text(int ncid, int varid, const char *name, PNC_Offset len,
+                    const char *value);
+
+PNETCDF_PUBLIC_API int
+ncmpix_put_att_int(int ncid, int varid, const char *name, nc_type xtype,
+                   PNC_Offset len, const int *value);
+
+PNETCDF_PUBLIC_API int
+ncmpix_put_att_float(int ncid, int varid, const char *name, nc_type xtype,
+                     PNC_Offset len, const float *value);
+
+PNETCDF_PUBLIC_API int
+ncmpix_enddef(int ncid);
+
+PNETCDF_PUBLIC_API int
+ncmpix_put_vara_float_all(int ncid, int varid, const PNC_Offset *start,
+                          const PNC_Offset *count, const float *value);
+
+PNETCDF_PUBLIC_API int
+ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset *start,
+                       const PNC_Offset *count, const float *value,
+                       int *reqidp);
+
+PNETCDF_PUBLIC_API int
+ncmpix_iput_var_float(int ncid, int varid, const float *value, int *reqidp);
+
+PNETCDF_PUBLIC_API int
+ncmpix_wait_all(int ncid, int num, int *reqids, int *statuses);
 
 #if defined(__cplusplus)
 }

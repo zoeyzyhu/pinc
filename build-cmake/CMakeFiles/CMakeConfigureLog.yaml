@@ -1,0 +1,2827 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+    searched_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/uname"
+      - "/usr/local/cuda-12.9/bin/uname"
+      - "/home/chengcli/.local/tempestremap/bin/uname"
+      - "/home/chengcli/bin/uname"
+      - "/home/chengcli/.gitcustom/uname"
+      - "/home/chengcli/pyenv/bin/uname"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/uname"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/uname"
+      - "/home/chengcli/.local/bin/uname"
+      - "/usr/condabin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 5.14.0-687.5.1.el9_8.x86_64 - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gmake"
+      - "/usr/local/cuda-12.9/bin/gmake"
+      - "/home/chengcli/.local/tempestremap/bin/gmake"
+      - "/home/chengcli/bin/gmake"
+      - "/home/chengcli/.gitcustom/gmake"
+      - "/home/chengcli/pyenv/bin/gmake"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gmake"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gmake"
+      - "/home/chengcli/.local/bin/gmake"
+      - "/usr/condabin/gmake"
+      - "/usr/local/bin/gmake"
+    found: "/usr/bin/gmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/cc"
+      - "/usr/local/cuda-12.9/bin/cc"
+      - "/home/chengcli/.local/tempestremap/bin/cc"
+      - "/home/chengcli/bin/cc"
+      - "/home/chengcli/.gitcustom/cc"
+      - "/home/chengcli/pyenv/bin/cc"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/cc"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/cc"
+      - "/home/chengcli/.local/bin/cc"
+      - "/usr/condabin/cc"
+      - "/usr/local/bin/cc"
+    found: "/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/4.3.2/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/usr/bin/dlltool"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/dlltool"
+      - "/usr/local/cuda-12.9/bin/dlltool"
+      - "/home/chengcli/.local/tempestremap/bin/dlltool"
+      - "/home/chengcli/bin/dlltool"
+      - "/home/chengcli/.gitcustom/dlltool"
+      - "/home/chengcli/pyenv/bin/dlltool"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/dlltool"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/dlltool"
+      - "/home/chengcli/.local/bin/dlltool"
+      - "/usr/condabin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/sbin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/tapi"
+      - "/usr/local/cuda-12.9/bin/tapi"
+      - "/home/chengcli/.local/tempestremap/bin/tapi"
+      - "/home/chengcli/bin/tapi"
+      - "/home/chengcli/.gitcustom/tapi"
+      - "/home/chengcli/pyenv/bin/tapi"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/tapi"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/tapi"
+      - "/home/chengcli/.local/bin/tapi"
+      - "/usr/condabin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/sbin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-11.5"
+      - "gcc-ar-11"
+      - "gcc-ar11"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ar-11.5"
+      - "/usr/local/cuda-12.9/bin/gcc-ar-11.5"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ar-11.5"
+      - "/home/chengcli/bin/gcc-ar-11.5"
+      - "/home/chengcli/.gitcustom/gcc-ar-11.5"
+      - "/home/chengcli/pyenv/bin/gcc-ar-11.5"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ar-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ar-11.5"
+      - "/home/chengcli/.local/bin/gcc-ar-11.5"
+      - "/usr/condabin/gcc-ar-11.5"
+      - "/usr/local/bin/gcc-ar-11.5"
+      - "/usr/local/sbin/gcc-ar-11.5"
+      - "/usr/sbin/gcc-ar-11.5"
+      - "/usr/bin/gcc-ar-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ar-11"
+      - "/usr/local/cuda-12.9/bin/gcc-ar-11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ar-11"
+      - "/home/chengcli/bin/gcc-ar-11"
+      - "/home/chengcli/.gitcustom/gcc-ar-11"
+      - "/home/chengcli/pyenv/bin/gcc-ar-11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ar-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ar-11"
+      - "/home/chengcli/.local/bin/gcc-ar-11"
+      - "/usr/condabin/gcc-ar-11"
+      - "/usr/local/bin/gcc-ar-11"
+      - "/usr/local/sbin/gcc-ar-11"
+      - "/usr/sbin/gcc-ar-11"
+      - "/usr/bin/gcc-ar11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ar11"
+      - "/usr/local/cuda-12.9/bin/gcc-ar11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ar11"
+      - "/home/chengcli/bin/gcc-ar11"
+      - "/home/chengcli/.gitcustom/gcc-ar11"
+      - "/home/chengcli/pyenv/bin/gcc-ar11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ar11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ar11"
+      - "/home/chengcli/.local/bin/gcc-ar11"
+      - "/usr/condabin/gcc-ar11"
+      - "/usr/local/bin/gcc-ar11"
+      - "/usr/local/sbin/gcc-ar11"
+      - "/usr/sbin/gcc-ar11"
+    found: "/usr/bin/gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-11.5"
+      - "gcc-ranlib-11"
+      - "gcc-ranlib11"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ranlib-11.5"
+      - "/usr/local/cuda-12.9/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.gitcustom/gcc-ranlib-11.5"
+      - "/home/chengcli/pyenv/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ranlib-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.local/bin/gcc-ranlib-11.5"
+      - "/usr/condabin/gcc-ranlib-11.5"
+      - "/usr/local/bin/gcc-ranlib-11.5"
+      - "/usr/local/sbin/gcc-ranlib-11.5"
+      - "/usr/sbin/gcc-ranlib-11.5"
+      - "/usr/bin/gcc-ranlib-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ranlib-11"
+      - "/usr/local/cuda-12.9/bin/gcc-ranlib-11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ranlib-11"
+      - "/home/chengcli/bin/gcc-ranlib-11"
+      - "/home/chengcli/.gitcustom/gcc-ranlib-11"
+      - "/home/chengcli/pyenv/bin/gcc-ranlib-11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ranlib-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ranlib-11"
+      - "/home/chengcli/.local/bin/gcc-ranlib-11"
+      - "/usr/condabin/gcc-ranlib-11"
+      - "/usr/local/bin/gcc-ranlib-11"
+      - "/usr/local/sbin/gcc-ranlib-11"
+      - "/usr/sbin/gcc-ranlib-11"
+      - "/usr/bin/gcc-ranlib11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ranlib11"
+      - "/usr/local/cuda-12.9/bin/gcc-ranlib11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ranlib11"
+      - "/home/chengcli/bin/gcc-ranlib11"
+      - "/home/chengcli/.gitcustom/gcc-ranlib11"
+      - "/home/chengcli/pyenv/bin/gcc-ranlib11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ranlib11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ranlib11"
+      - "/home/chengcli/.local/bin/gcc-ranlib11"
+      - "/usr/condabin/gcc-ranlib11"
+      - "/usr/local/bin/gcc-ranlib11"
+      - "/usr/local/sbin/gcc-ranlib11"
+      - "/usr/sbin/gcc-ranlib11"
+    found: "/usr/bin/gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "CC"
+      - "g++"
+      - "aCC"
+      - "cl"
+      - "bcc"
+      - "xlC"
+      - "icpx"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "/usr/bin/"
+    found: "/usr/bin/c++"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/4.3.2/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-11.5"
+      - "gcc-ar-11"
+      - "gcc-ar11"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ar-11.5"
+      - "/usr/local/cuda-12.9/bin/gcc-ar-11.5"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ar-11.5"
+      - "/home/chengcli/bin/gcc-ar-11.5"
+      - "/home/chengcli/.gitcustom/gcc-ar-11.5"
+      - "/home/chengcli/pyenv/bin/gcc-ar-11.5"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ar-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ar-11.5"
+      - "/home/chengcli/.local/bin/gcc-ar-11.5"
+      - "/usr/condabin/gcc-ar-11.5"
+      - "/usr/local/bin/gcc-ar-11.5"
+      - "/usr/local/sbin/gcc-ar-11.5"
+      - "/usr/sbin/gcc-ar-11.5"
+      - "/usr/bin/gcc-ar-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ar-11"
+      - "/usr/local/cuda-12.9/bin/gcc-ar-11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ar-11"
+      - "/home/chengcli/bin/gcc-ar-11"
+      - "/home/chengcli/.gitcustom/gcc-ar-11"
+      - "/home/chengcli/pyenv/bin/gcc-ar-11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ar-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ar-11"
+      - "/home/chengcli/.local/bin/gcc-ar-11"
+      - "/usr/condabin/gcc-ar-11"
+      - "/usr/local/bin/gcc-ar-11"
+      - "/usr/local/sbin/gcc-ar-11"
+      - "/usr/sbin/gcc-ar-11"
+      - "/usr/bin/gcc-ar11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ar11"
+      - "/usr/local/cuda-12.9/bin/gcc-ar11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ar11"
+      - "/home/chengcli/bin/gcc-ar11"
+      - "/home/chengcli/.gitcustom/gcc-ar11"
+      - "/home/chengcli/pyenv/bin/gcc-ar11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ar11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ar11"
+      - "/home/chengcli/.local/bin/gcc-ar11"
+      - "/usr/condabin/gcc-ar11"
+      - "/usr/local/bin/gcc-ar11"
+      - "/usr/local/sbin/gcc-ar11"
+      - "/usr/sbin/gcc-ar11"
+    found: "/usr/bin/gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-11.5"
+      - "gcc-ranlib-11"
+      - "gcc-ranlib11"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ranlib-11.5"
+      - "/usr/local/cuda-12.9/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.gitcustom/gcc-ranlib-11.5"
+      - "/home/chengcli/pyenv/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ranlib-11.5"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ranlib-11.5"
+      - "/home/chengcli/.local/bin/gcc-ranlib-11.5"
+      - "/usr/condabin/gcc-ranlib-11.5"
+      - "/usr/local/bin/gcc-ranlib-11.5"
+      - "/usr/local/sbin/gcc-ranlib-11.5"
+      - "/usr/sbin/gcc-ranlib-11.5"
+      - "/usr/bin/gcc-ranlib-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ranlib-11"
+      - "/usr/local/cuda-12.9/bin/gcc-ranlib-11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ranlib-11"
+      - "/home/chengcli/bin/gcc-ranlib-11"
+      - "/home/chengcli/.gitcustom/gcc-ranlib-11"
+      - "/home/chengcli/pyenv/bin/gcc-ranlib-11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ranlib-11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ranlib-11"
+      - "/home/chengcli/.local/bin/gcc-ranlib-11"
+      - "/usr/condabin/gcc-ranlib-11"
+      - "/usr/local/bin/gcc-ranlib-11"
+      - "/usr/local/sbin/gcc-ranlib-11"
+      - "/usr/sbin/gcc-ranlib-11"
+      - "/usr/bin/gcc-ranlib11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcc-ranlib11"
+      - "/usr/local/cuda-12.9/bin/gcc-ranlib11"
+      - "/home/chengcli/.local/tempestremap/bin/gcc-ranlib11"
+      - "/home/chengcli/bin/gcc-ranlib11"
+      - "/home/chengcli/.gitcustom/gcc-ranlib11"
+      - "/home/chengcli/pyenv/bin/gcc-ranlib11"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcc-ranlib11"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcc-ranlib11"
+      - "/home/chengcli/.local/bin/gcc-ranlib11"
+      - "/usr/condabin/gcc-ranlib11"
+      - "/usr/local/bin/gcc-ranlib11"
+      - "/usr/local/sbin/gcc-ranlib11"
+      - "/usr/sbin/gcc-ranlib11"
+    found: "/usr/bin/gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-SIqWqh"
+      binary: "/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-SIqWqh"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-SIqWqh'
+        
+        Run Build Command(s): /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_47c5d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_47c5d.dir/build.make CMakeFiles/cmTC_47c5d.dir/build
+        gmake[1]: Entering directory '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-SIqWqh'
+        Building C object CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o -c /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_47c5d.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/cc1 -quiet -v /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_47c5d.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v2 -version -o /tmp/ccu7kb53.s
+        GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/11/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 1e506c45a230522b684e29be3e0644c9
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_47c5d.dir/'
+         as -v --64 -o CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o /tmp/ccu7kb53.s
+        GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-72.el9
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_47c5d
+        /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47c5d.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_47c5d' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_47c5d.'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRMB3Vg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_47c5d /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        collect2 version 11.5.0 20240719 (Red Hat 11.5.0-14)
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRMB3Vg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_47c5d /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        GNU ld version 2.35.2-72.el9
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_47c5d' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_47c5d.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o -o cmTC_47c5d
+        gmake[1]: Leaving directory '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-SIqWqh'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/11/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-SIqWqh']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_47c5d/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_47c5d.dir/build.make CMakeFiles/cmTC_47c5d.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-SIqWqh']
+        ignore line: [Building C object CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o -c /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_47c5d.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/cc1 -quiet -v /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_47c5d.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v2 -version -o /tmp/ccu7kb53.s]
+        ignore line: [GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 1e506c45a230522b684e29be3e0644c9]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_47c5d.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o /tmp/ccu7kb53.s]
+        ignore line: [GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-72.el9]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_47c5d]
+        ignore line: [/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47c5d.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_47c5d' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_47c5d.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRMB3Vg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_47c5d /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccRMB3Vg.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_47c5d] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 11.5.0 20240719 (Red Hat 11.5.0-14)]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccRMB3Vg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_47c5d /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_47c5d.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11] ==> [/usr/lib/gcc/x86_64-redhat-linux/11]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/11;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.35.2-72.el9
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-LgtfzY"
+      binary: "/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-LgtfzY"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-LgtfzY'
+        
+        Run Build Command(s): /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_90957/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_90957.dir/build.make CMakeFiles/cmTC_90957.dir/build
+        gmake[1]: Entering directory '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-LgtfzY'
+        Building CXX object CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o -c /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_90957.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/cc1plus -quiet -v -D_GNU_SOURCE /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_90957.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v2 -version -o /tmp/ccFvMXzU.s
+        GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward
+         /usr/lib/gcc/x86_64-redhat-linux/11/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: ae59d51e35a5faa6cedf961e5aa149e5
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_90957.dir/'
+         as -v --64 -o CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFvMXzU.s
+        GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-72.el9
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_90957
+        /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90957.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_90957' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_90957.'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8rnqIO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_90957 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        collect2 version 11.5.0 20240719 (Red Hat 11.5.0-14)
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8rnqIO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_90957 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        GNU ld version 2.35.2-72.el9
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_90957' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_90957.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_90957
+        gmake[1]: Leaving directory '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-LgtfzY'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11] ==> [/usr/include/c++/11]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux] ==> [/usr/include/c++/11/x86_64-redhat-linux]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward] ==> [/usr/include/c++/11/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/11;/usr/include/c++/11/x86_64-redhat-linux;/usr/include/c++/11/backward;/usr/lib/gcc/x86_64-redhat-linux/11/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-LgtfzY']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_90957/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_90957.dir/build.make CMakeFiles/cmTC_90957.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/chengcli/scix/repos/pnetcdf/build-cmake/CMakeFiles/CMakeScratch/TryCompile-LgtfzY']
+        ignore line: [Building CXX object CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o -c /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_90957.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/cc1plus -quiet -v -D_GNU_SOURCE /home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_90957.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v2 -version -o /tmp/ccFvMXzU.s]
+        ignore line: [GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-14) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-14)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: ae59d51e35a5faa6cedf961e5aa149e5]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_90957.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFvMXzU.s]
+        ignore line: [GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-72.el9]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_90957]
+        ignore line: [/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90957.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-14) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_90957' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_90957.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8rnqIO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_90957 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc8rnqIO.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_90957] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 11.5.0 20240719 (Red Hat 11.5.0-14)]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/cc8rnqIO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_90957 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. -v CMakeFiles/cmTC_90957.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11] ==> [/usr/lib/gcc/x86_64-redhat-linux/11]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/11;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.35.2-72.el9
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:171 (find_program)"
+      - "CMakeLists.txt:13 (include)"
+    mode: "program"
+    variable: "GITCOMMAND"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git"
+    candidate_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/sbin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/git"
+      - "/usr/local/cuda-12.9/bin/git"
+      - "/home/chengcli/.local/tempestremap/bin/git"
+      - "/home/chengcli/bin/git"
+      - "/home/chengcli/.gitcustom/git"
+      - "/home/chengcli/pyenv/bin/git"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/git"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/git"
+      - "/home/chengcli/.local/bin/git"
+      - "/usr/condabin/git"
+      - "/usr/local/bin/git"
+    found: "/usr/bin/git"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:188 (find_program)"
+      - "CMakeLists.txt:13 (include)"
+    mode: "program"
+    variable: "MEMORYCHECK_COMMAND"
+    description: "Path to the memory checking command, used for memory error detection."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "purify"
+      - "valgrind"
+      - "boundscheck"
+      - "drmemory"
+      - "cuda-memcheck"
+      - "compute-sanitizer"
+    candidate_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/sbin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/purify"
+      - "/usr/local/cuda-12.9/bin/purify"
+      - "/home/chengcli/.local/tempestremap/bin/purify"
+      - "/home/chengcli/bin/purify"
+      - "/home/chengcli/.gitcustom/purify"
+      - "/home/chengcli/pyenv/bin/purify"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/purify"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/purify"
+      - "/home/chengcli/.local/bin/purify"
+      - "/usr/condabin/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/bin/purify"
+      - "/usr/local/sbin/purify"
+      - "/usr/sbin/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/local/sbin/purify"
+      - "/usr/local/purify"
+      - "/usr/bin/purify"
+      - "/usr/sbin/purify"
+      - "/usr/purify"
+      - "/bin/purify"
+      - "/sbin/purify"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/purify"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/sbin/purify"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/purify"
+      - "/usr/X11R6/bin/purify"
+      - "/usr/X11R6/sbin/purify"
+      - "/usr/X11R6/purify"
+      - "/usr/pkg/bin/purify"
+      - "/usr/pkg/sbin/purify"
+      - "/usr/pkg/purify"
+      - "/opt/bin/purify"
+      - "/opt/sbin/purify"
+      - "/opt/purify"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/valgrind"
+      - "/usr/local/cuda-12.9/bin/valgrind"
+      - "/home/chengcli/.local/tempestremap/bin/valgrind"
+      - "/home/chengcli/bin/valgrind"
+      - "/home/chengcli/.gitcustom/valgrind"
+      - "/home/chengcli/pyenv/bin/valgrind"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/valgrind"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/valgrind"
+      - "/home/chengcli/.local/bin/valgrind"
+      - "/usr/condabin/valgrind"
+      - "/usr/local/bin/valgrind"
+    found: "/usr/bin/valgrind"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:196 (find_program)"
+      - "CMakeLists.txt:13 (include)"
+    mode: "program"
+    variable: "COVERAGE_COMMAND"
+    description: "Path to the coverage program that CTest uses for performing coverage inspection"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcov"
+    candidate_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/"
+      - "/usr/local/cuda-12.9/bin/"
+      - "/home/chengcli/.local/tempestremap/bin/"
+      - "/home/chengcli/bin/"
+      - "/home/chengcli/.gitcustom/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/"
+      - "/home/chengcli/.local/bin/"
+      - "/usr/condabin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/bin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/sbin/"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/gcov"
+      - "/usr/local/cuda-12.9/bin/gcov"
+      - "/home/chengcli/.local/tempestremap/bin/gcov"
+      - "/home/chengcli/bin/gcov"
+      - "/home/chengcli/.gitcustom/gcov"
+      - "/home/chengcli/pyenv/bin/gcov"
+      - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y/gcov"
+      - "/home/chengcli/.nvm/versions/node/v24.16.0/bin/gcov"
+      - "/home/chengcli/.local/bin/gcov"
+      - "/usr/condabin/gcov"
+      - "/usr/local/bin/gcov"
+    found: "/usr/bin/gcov"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/FindPython/Support.cmake:2127 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/FindPython3.cmake:671 (include)"
+      - "CMakeLists.txt:50 (find_package)"
+    mode: "program"
+    variable: "_Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.15mu"
+      - "python3.15m"
+      - "python3.15u"
+      - "python3.15"
+      - "python3.15dmu"
+      - "python3.15dm"
+      - "python3.15du"
+      - "python3.15d"
+      - "python3.14mu"
+      - "python3.14m"
+      - "python3.14u"
+      - "python3.14"
+      - "python3.14dmu"
+      - "python3.14dm"
+      - "python3.14du"
+      - "python3.14d"
+      - "python3.13mu"
+      - "python3.13m"
+      - "python3.13u"
+      - "python3.13"
+      - "python3.13dmu"
+      - "python3.13dm"
+      - "python3.13du"
+      - "python3.13d"
+      - "python3.12mu"
+      - "python3.12m"
+      - "python3.12u"
+      - "python3.12"
+      - "python3.12dmu"
+      - "python3.12dm"
+      - "python3.12du"
+      - "python3.12d"
+      - "python3.11mu"
+      - "python3.11m"
+      - "python3.11u"
+      - "python3.11"
+      - "python3.11dmu"
+      - "python3.11dm"
+      - "python3.11du"
+      - "python3.11d"
+      - "python3.10mu"
+      - "python3.10m"
+      - "python3.10u"
+      - "python3.10"
+      - "python3.10dmu"
+      - "python3.10dm"
+      - "python3.10du"
+      - "python3.10d"
+      - "python3.9mu"
+      - "python3.9m"
+      - "python3.9u"
+      - "python3.9"
+      - "python3.9dmu"
+      - "python3.9dm"
+      - "python3.9du"
+      - "python3.9d"
+      - "python3.8mu"
+      - "python3.8m"
+      - "python3.8u"
+      - "python3.8"
+      - "python3.8dmu"
+      - "python3.8dm"
+      - "python3.8du"
+      - "python3.8d"
+      - "python3.7mu"
+      - "python3.7m"
+      - "python3.7u"
+      - "python3.7"
+      - "python3.7dmu"
+      - "python3.7dm"
+      - "python3.7du"
+      - "python3.7d"
+      - "python3.6mu"
+      - "python3.6m"
+      - "python3.6u"
+      - "python3.6"
+      - "python3.6dmu"
+      - "python3.6dm"
+      - "python3.6du"
+      - "python3.6d"
+      - "python3.5mu"
+      - "python3.5m"
+      - "python3.5u"
+      - "python3.5"
+      - "python3.5dmu"
+      - "python3.5dm"
+      - "python3.5du"
+      - "python3.5d"
+      - "python3.4mu"
+      - "python3.4m"
+      - "python3.4u"
+      - "python3.4"
+      - "python3.4dmu"
+      - "python3.4dm"
+      - "python3.4du"
+      - "python3.4d"
+      - "python3.3mu"
+      - "python3.3m"
+      - "python3.3u"
+      - "python3.3"
+      - "python3.3dmu"
+      - "python3.3dm"
+      - "python3.3du"
+      - "python3.3d"
+      - "python3.2mu"
+      - "python3.2m"
+      - "python3.2u"
+      - "python3.2"
+      - "python3.2dmu"
+      - "python3.2dm"
+      - "python3.2du"
+      - "python3.2d"
+      - "python3.1mu"
+      - "python3.1m"
+      - "python3.1u"
+      - "python3.1"
+      - "python3.1dmu"
+      - "python3.1dm"
+      - "python3.1du"
+      - "python3.1d"
+      - "python3.0mu"
+      - "python3.0m"
+      - "python3.0u"
+      - "python3.0"
+      - "python3.0dmu"
+      - "python3.0dm"
+      - "python3.0du"
+      - "python3.0d"
+      - "python3"
+      - "python"
+    candidate_directories:
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/pyenv/Scripts/"
+      - "/home/chengcli/pyenv/"
+    searched_directories:
+      - "/home/chengcli/pyenv/bin/python3.15mu"
+      - "/home/chengcli/pyenv/bin/python3.15m"
+      - "/home/chengcli/pyenv/bin/python3.15u"
+      - "/home/chengcli/pyenv/bin/python3.15"
+      - "/home/chengcli/pyenv/bin/python3.15dmu"
+      - "/home/chengcli/pyenv/bin/python3.15dm"
+      - "/home/chengcli/pyenv/bin/python3.15du"
+      - "/home/chengcli/pyenv/bin/python3.15d"
+      - "/home/chengcli/pyenv/bin/python3.14mu"
+      - "/home/chengcli/pyenv/bin/python3.14m"
+      - "/home/chengcli/pyenv/bin/python3.14u"
+      - "/home/chengcli/pyenv/bin/python3.14"
+      - "/home/chengcli/pyenv/bin/python3.14dmu"
+      - "/home/chengcli/pyenv/bin/python3.14dm"
+      - "/home/chengcli/pyenv/bin/python3.14du"
+      - "/home/chengcli/pyenv/bin/python3.14d"
+      - "/home/chengcli/pyenv/bin/python3.13mu"
+      - "/home/chengcli/pyenv/bin/python3.13m"
+      - "/home/chengcli/pyenv/bin/python3.13u"
+      - "/home/chengcli/pyenv/bin/python3.13"
+      - "/home/chengcli/pyenv/bin/python3.13dmu"
+      - "/home/chengcli/pyenv/bin/python3.13dm"
+      - "/home/chengcli/pyenv/bin/python3.13du"
+      - "/home/chengcli/pyenv/bin/python3.13d"
+      - "/home/chengcli/pyenv/bin/python3.12mu"
+      - "/home/chengcli/pyenv/bin/python3.12m"
+      - "/home/chengcli/pyenv/bin/python3.12u"
+      - "/home/chengcli/pyenv/bin/python3.12"
+      - "/home/chengcli/pyenv/bin/python3.12dmu"
+      - "/home/chengcli/pyenv/bin/python3.12dm"
+      - "/home/chengcli/pyenv/bin/python3.12du"
+      - "/home/chengcli/pyenv/bin/python3.12d"
+      - "/home/chengcli/pyenv/bin/python3.11mu"
+      - "/home/chengcli/pyenv/bin/python3.11m"
+      - "/home/chengcli/pyenv/bin/python3.11u"
+    found: "/home/chengcli/pyenv/bin/python3.11"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/FindPython/Support.cmake:3055 (find_program)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/FindPython3.cmake:671 (include)"
+      - "CMakeLists.txt:242 (find_package)"
+    mode: "program"
+    variable: "_Python3_CONFIG"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.15mu-config"
+      - "python3.15m-config"
+      - "python3.15u-config"
+      - "python3.15-config"
+      - "python3.15dmu-config"
+      - "python3.15dm-config"
+      - "python3.15du-config"
+      - "python3.15d-config"
+      - "python3.14mu-config"
+      - "python3.14m-config"
+      - "python3.14u-config"
+      - "python3.14-config"
+      - "python3.14dmu-config"
+      - "python3.14dm-config"
+      - "python3.14du-config"
+      - "python3.14d-config"
+      - "python3.13mu-config"
+      - "python3.13m-config"
+      - "python3.13u-config"
+      - "python3.13-config"
+      - "python3.13dmu-config"
+      - "python3.13dm-config"
+      - "python3.13du-config"
+      - "python3.13d-config"
+      - "python3.12mu-config"
+      - "python3.12m-config"
+      - "python3.12u-config"
+      - "python3.12-config"
+      - "python3.12dmu-config"
+      - "python3.12dm-config"
+      - "python3.12du-config"
+      - "python3.12d-config"
+      - "python3.11mu-config"
+      - "python3.11m-config"
+      - "python3.11u-config"
+      - "python3.11-config"
+      - "python3.11dmu-config"
+      - "python3.11dm-config"
+      - "python3.11du-config"
+      - "python3.11d-config"
+      - "python3.10mu-config"
+      - "python3.10m-config"
+      - "python3.10u-config"
+      - "python3.10-config"
+      - "python3.10dmu-config"
+      - "python3.10dm-config"
+      - "python3.10du-config"
+      - "python3.10d-config"
+      - "python3.9mu-config"
+      - "python3.9m-config"
+      - "python3.9u-config"
+      - "python3.9-config"
+      - "python3.9dmu-config"
+      - "python3.9dm-config"
+      - "python3.9du-config"
+      - "python3.9d-config"
+      - "python3.8mu-config"
+      - "python3.8m-config"
+      - "python3.8u-config"
+      - "python3.8-config"
+      - "python3.8dmu-config"
+      - "python3.8dm-config"
+      - "python3.8du-config"
+      - "python3.8d-config"
+      - "python3.7mu-config"
+      - "python3.7m-config"
+      - "python3.7u-config"
+      - "python3.7-config"
+      - "python3.7dmu-config"
+      - "python3.7dm-config"
+      - "python3.7du-config"
+      - "python3.7d-config"
+      - "python3.6mu-config"
+      - "python3.6m-config"
+      - "python3.6u-config"
+      - "python3.6-config"
+      - "python3.6dmu-config"
+      - "python3.6dm-config"
+      - "python3.6du-config"
+      - "python3.6d-config"
+      - "python3.5mu-config"
+      - "python3.5m-config"
+      - "python3.5u-config"
+      - "python3.5-config"
+      - "python3.5dmu-config"
+      - "python3.5dm-config"
+      - "python3.5du-config"
+      - "python3.5d-config"
+      - "python3.4mu-config"
+      - "python3.4m-config"
+      - "python3.4u-config"
+      - "python3.4-config"
+      - "python3.4dmu-config"
+      - "python3.4dm-config"
+      - "python3.4du-config"
+      - "python3.4d-config"
+      - "python3.3mu-config"
+      - "python3.3m-config"
+      - "python3.3u-config"
+      - "python3.3-config"
+      - "python3.3dmu-config"
+      - "python3.3dm-config"
+      - "python3.3du-config"
+      - "python3.3d-config"
+      - "python3.2mu-config"
+      - "python3.2m-config"
+      - "python3.2u-config"
+      - "python3.2-config"
+      - "python3.2dmu-config"
+      - "python3.2dm-config"
+      - "python3.2du-config"
+      - "python3.2d-config"
+      - "python3.1mu-config"
+      - "python3.1m-config"
+      - "python3.1u-config"
+      - "python3.1-config"
+      - "python3.1dmu-config"
+      - "python3.1dm-config"
+      - "python3.1du-config"
+      - "python3.1d-config"
+      - "python3.0mu-config"
+      - "python3.0m-config"
+      - "python3.0u-config"
+      - "python3.0-config"
+      - "python3.0dmu-config"
+      - "python3.0dm-config"
+      - "python3.0du-config"
+      - "python3.0d-config"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/usr/"
+      - "/home/chengcli/pyenv/bin/"
+      - "/home/chengcli/pyenv/"
+    searched_directories:
+      - "/usr/bin/python3.15mu-config"
+      - "/usr/bin/python3.15m-config"
+      - "/usr/bin/python3.15u-config"
+      - "/usr/bin/python3.15-config"
+      - "/usr/bin/python3.15dmu-config"
+      - "/usr/bin/python3.15dm-config"
+      - "/usr/bin/python3.15du-config"
+      - "/usr/bin/python3.15d-config"
+      - "/usr/bin/python3.14mu-config"
+      - "/usr/bin/python3.14m-config"
+      - "/usr/bin/python3.14u-config"
+      - "/usr/bin/python3.14-config"
+      - "/usr/bin/python3.14dmu-config"
+      - "/usr/bin/python3.14dm-config"
+      - "/usr/bin/python3.14du-config"
+      - "/usr/bin/python3.14d-config"
+      - "/usr/bin/python3.13mu-config"
+      - "/usr/bin/python3.13m-config"
+      - "/usr/bin/python3.13u-config"
+      - "/usr/bin/python3.13-config"
+      - "/usr/bin/python3.13dmu-config"
+      - "/usr/bin/python3.13dm-config"
+      - "/usr/bin/python3.13du-config"
+      - "/usr/bin/python3.13d-config"
+      - "/usr/bin/python3.12mu-config"
+      - "/usr/bin/python3.12m-config"
+      - "/usr/bin/python3.12u-config"
+      - "/usr/bin/python3.12-config"
+      - "/usr/bin/python3.12dmu-config"
+      - "/usr/bin/python3.12dm-config"
+      - "/usr/bin/python3.12du-config"
+      - "/usr/bin/python3.12d-config"
+      - "/usr/bin/python3.11mu-config"
+      - "/usr/bin/python3.11m-config"
+      - "/usr/bin/python3.11u-config"
+    found: "/usr/bin/python3.11-config"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/FindPython/Support.cmake:3846 (find_path)"
+      - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data/share/cmake-4.3/Modules/FindPython3.cmake:671 (include)"
+      - "CMakeLists.txt:242 (find_package)"
+    mode: "path"
+    variable: "_Python3_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Python.h"
+    candidate_directories:
+      - "/usr/include/python3.11/"
+    found: "/usr/include/python3.11/"
+    search_context:
+      ENV{PATH}:
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.codex/tmp/arg0/codex-arg04Lq74y"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path"
+        - "/usr/local/cuda-12.9/bin"
+        - "/home/chengcli/.local/tempestremap/bin"
+        - "/home/chengcli/bin"
+        - "/home/chengcli/.gitcustom"
+        - "/home/chengcli/pyenv/bin"
+        - "/home/chengcli/.nvm/versions/node/v24.16.0/bin"
+        - "/home/chengcli/.local/bin"
+        - "/home/chengcli/bin"
+        - "/usr/condabin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/chengcli/pyenv/lib/python3.11/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...

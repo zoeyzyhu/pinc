@@ -292,4 +292,44 @@ int pnc_commux_recv_int64(int src, int tag, int64_t* valuep) {
   }
 }
 
+int pnc_commux_send_bytes(const void* data, int64_t nbytes, int dst, int tag) {
+  std::lock_guard<std::mutex> lock(g_mutex);
+  Runtime* runtime = runtime_or_error();
+  if (runtime == nullptr) return PNC_COMMUX_ERR_RUNTIME;
+  if (nbytes < 0 || (nbytes > 0 && data == nullptr)) {
+    set_error("pnc_commux_send_bytes received invalid buffer");
+    return PNC_COMMUX_ERR_ARG;
+  }
+  try {
+    auto tensor = torch::empty({nbytes}, torch::TensorOptions().dtype(torch::kUInt8));
+    if (nbytes > 0) std::memcpy(tensor.data_ptr(), data, static_cast<size_t>(nbytes));
+    std::vector<at::Tensor> tensors{tensor};
+    runtime->pg->send(tensors, dst, tag)->wait();
+    return PNC_COMMUX_SUCCESS;
+  } catch (const std::exception& e) {
+    set_error("commux send_bytes failed: %s", e.what());
+    return PNC_COMMUX_ERR_RUNTIME;
+  }
+}
+
+int pnc_commux_recv_bytes(void* data, int64_t nbytes, int src, int tag) {
+  std::lock_guard<std::mutex> lock(g_mutex);
+  Runtime* runtime = runtime_or_error();
+  if (runtime == nullptr) return PNC_COMMUX_ERR_RUNTIME;
+  if (nbytes < 0 || (nbytes > 0 && data == nullptr)) {
+    set_error("pnc_commux_recv_bytes received invalid buffer");
+    return PNC_COMMUX_ERR_ARG;
+  }
+  try {
+    auto tensor = torch::empty({nbytes}, torch::TensorOptions().dtype(torch::kUInt8));
+    std::vector<at::Tensor> tensors{tensor};
+    runtime->pg->recv(tensors, src, tag)->wait();
+    if (nbytes > 0) std::memcpy(data, tensor.data_ptr(), static_cast<size_t>(nbytes));
+    return PNC_COMMUX_SUCCESS;
+  } catch (const std::exception& e) {
+    set_error("commux recv_bytes failed: %s", e.what());
+    return PNC_COMMUX_ERR_RUNTIME;
+  }
+}
+
 }  // extern "C"

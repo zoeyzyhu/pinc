@@ -70,6 +70,12 @@ pnc_commux_send_int64(int64_t value, int dst, int tag);
 PNC_COMMUX_API int
 pnc_commux_recv_int64(int src, int tag, int64_t *valuep);
 
+PNC_COMMUX_API int
+pnc_commux_send_bytes(const void *data, int64_t nbytes, int dst, int tag);
+
+PNC_COMMUX_API int
+pnc_commux_recv_bytes(void *data, int64_t nbytes, int src, int tag);
+
 #if defined(__cplusplus)
 }
 #endif

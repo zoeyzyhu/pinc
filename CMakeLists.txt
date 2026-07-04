@@ -159,8 +159,10 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
   configure_file(src/include/pnetcdf_comm.h.in "${CMAKE_CURRENT_BINARY_DIR}/src/include/pnetcdf_comm.h" @ONLY)
 
   add_library(pnc src/comm/pnc_commux_runtime.cpp)
+  target_sources(pnc PRIVATE src/comm/pnc_netcdf_io.cpp)
   target_include_directories(pnc
     PUBLIC
+      "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/src/include>"
       "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/include>"
       "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
     PRIVATE
@@ -173,7 +175,11 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
     "${COMMUX_DIR}/lib/libcommux.so"
     "${TORCH_LIBRARY_DIR}/libtorch.so"
     "${TORCH_LIBRARY_DIR}/libtorch_cpu.so"
-    "${TORCH_LIBRARY_DIR}/libc10.so")
+    "${TORCH_LIBRARY_DIR}/libc10.so"
+    netcdf)
+  if(EXISTS "${COMMUX_DIR}/lib/libcommux_io.so")
+    target_link_libraries(pnc PRIVATE "${COMMUX_DIR}/lib/libcommux_io.so")
+  endif()
   if(COMMUX_DIR)
     set(_pnc_commux_runtime_rpath "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
     if(SKBUILD)
@@ -215,6 +221,7 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
       BUILD_RPATH "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
       INSTALL_RPATH "${_pnc_commux_rpath}")
   endif()
+  target_link_libraries(pnetcdf PUBLIC pnc)
   set_target_properties(pnetcdf PROPERTIES
     OUTPUT_NAME pnetcdf
     VERSION 8.0.0
@@ -257,6 +264,8 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
     add_test(NAME commux_smoke COMMAND commux_smoke)
     add_executable(commux_c_4proc test/commux_c_4proc.c)
     target_link_libraries(commux_c_4proc PRIVATE pnc)
+    add_executable(ncmpix_cdf5_4proc test/ncmpix_cdf5_4proc.c)
+    target_link_libraries(ncmpix_cdf5_4proc PRIVATE pnc netcdf)
 
     execute_process(
       COMMAND "${Python3_EXECUTABLE}" -c "import shutil; print(shutil.which('torchrun') or '')"
@@ -267,6 +276,9 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
       add_test(NAME commux_c_4proc
         COMMAND "${TORCHRUN_EXECUTABLE}" --nproc-per-node=4 --no-python
                 "$<TARGET_FILE:commux_c_4proc>")
+      add_test(NAME ncmpix_cdf5_4proc
+        COMMAND "${TORCHRUN_EXECUTABLE}" --nproc-per-node=4 --no-python
+                "$<TARGET_FILE:ncmpix_cdf5_4proc>")
       add_test(NAME commux_4proc
         COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/test/commux_4proc.py")
       set_tests_properties(commux_4proc PROPERTIES SKIP_RETURN_CODE 77)
