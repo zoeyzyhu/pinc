@@ -65,10 +65,13 @@ bool parse_tcp_init_method(const char* init_method, std::string& host,
                            int& port) {
   if (init_method == nullptr || std::strcmp(init_method, "env://") == 0) {
     const char* env_host = getenv_required("MASTER_ADDR");
-    const char* env_port = getenv_required("MASTER_PORT");
+    const char* env_port = std::getenv("PNC_COMMUX_MASTER_PORT");
+    bool explicit_pnc_port = env_port != nullptr && env_port[0] != '\0';
+    if (!explicit_pnc_port) env_port = getenv_required("MASTER_PORT");
     if (env_host == nullptr || env_port == nullptr) return false;
     host = env_host;
     port = std::atoi(env_port);
+    if (!explicit_pnc_port) port += 101;
     return port > 0;
   }
 
@@ -93,6 +96,10 @@ bool parse_tcp_init_method(const char* init_method, std::string& host,
     return false;
   }
   return true;
+}
+
+void set_default_env(const char* name, const char* value) {
+  if (std::getenv(name) == nullptr) setenv(name, value, /*overwrite=*/0);
 }
 
 c10d::ReduceOp reduce_op(PNC_CommuxReduceOp op) {
@@ -172,6 +179,8 @@ int pnc_commux_init(const char* backend, const char* init_method, int rank,
     }
     if (!parse_tcp_init_method(init_method, host, port))
       return PNC_COMMUX_ERR_ARG;
+
+    set_default_env("UCX_TLS", "^cuda_copy,cuda_ipc,gdr_copy");
 
     c10d::TCPStoreOptions store_opts;
     store_opts.port = static_cast<std::uint16_t>(port);
