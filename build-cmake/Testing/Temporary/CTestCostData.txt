@@ -1,5 +1,0 @@
-commux_smoke 3 0.120986
-commux_c_4proc 2 1.20217
-ncmpix_cdf5_4proc 1 2.39002
-commux_4proc 1 3.5868
----

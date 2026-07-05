@@ -76,6 +76,19 @@ pnc_commux_send_bytes(const void *data, int64_t nbytes, int dst, int tag);
 PNC_COMMUX_API int
 pnc_commux_recv_bytes(void *data, int64_t nbytes, int src, int tag);
 
+PNC_COMMUX_API int
+pnc_commux_file_open(const char *path, int flags, int mode, int64_t *handlep);
+
+PNC_COMMUX_API int
+pnc_commux_file_close(int64_t handle);
+
+PNC_COMMUX_API int
+pnc_commux_file_pwrite(int64_t handle, const void *data, int64_t nbytes,
+                       int64_t offset);
+
+PNC_COMMUX_API int
+pnc_commux_file_sync(int64_t handle);
+
 #if defined(__cplusplus)
 }
 #endif

@@ -266,6 +266,8 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
     target_link_libraries(commux_c_4proc PRIVATE pnc)
     add_executable(ncmpix_cdf5_4proc test/ncmpix_cdf5_4proc.c)
     target_link_libraries(ncmpix_cdf5_4proc PRIVATE pnc netcdf)
+    add_executable(ncmpix_record_4proc test/ncmpix_record_4proc.c)
+    target_link_libraries(ncmpix_record_4proc PRIVATE pnc netcdf)
 
     execute_process(
       COMMAND "${Python3_EXECUTABLE}" -c "import shutil; print(shutil.which('torchrun') or '')"
@@ -279,6 +281,9 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
       add_test(NAME ncmpix_cdf5_4proc
         COMMAND "${TORCHRUN_EXECUTABLE}" --nproc-per-node=4 --no-python
                 "$<TARGET_FILE:ncmpix_cdf5_4proc>")
+      add_test(NAME ncmpix_record_4proc
+        COMMAND "${TORCHRUN_EXECUTABLE}" --nproc-per-node=4 --no-python
+                "$<TARGET_FILE:ncmpix_record_4proc>")
       add_test(NAME commux_4proc
         COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/test/commux_4proc.py")
       set_tests_properties(commux_4proc PROPERTIES SKIP_RETURN_CODE 77)

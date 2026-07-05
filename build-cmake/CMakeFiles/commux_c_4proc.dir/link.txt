@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/commux_c_4proc.dir/test/commux_c_4proc.c.o -o commux_c_4proc  -Wl,-rpath,/home/chengcli/scix/repos/pnetcdf/build-cmake libpnc.so.0.1.0

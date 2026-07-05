@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared  -o _pnetcdf_commux.so CMakeFiles/pnetcdf_commux_py.dir/python/csrc/pnetcdf_commux.cpp.o  -Wl,-rpath,/home/chengcli/scix/repos/pnetcdf/build-cmake:/home/chengcli/pyenv/lib64/python3.11/site-packages/commux/lib:/home/chengcli/pyenv/lib64/python3.11/site-packages/torch/lib: libpnc.so.0.1.0

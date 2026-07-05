@@ -19,9 +19,15 @@
 #include <cstdarg>
 #include <cstdlib>
 #include <cstring>
+#include <cerrno>
+#include <fcntl.h>
+#include <cinttypes>
+#include <map>
 #include <memory>
 #include <mutex>
 #include <string>
+#include <sys/types.h>
+#include <unistd.h>
 #include <vector>
 
 namespace {
@@ -31,6 +37,8 @@ struct Runtime {
   c10::intrusive_ptr<commux::ProcessGroupUCX> pg;
   int rank = -1;
   int size = -1;
+  int64_t next_file_handle = 1;
+  std::map<int64_t, int> files;
 };
 
 std::mutex g_mutex;
@@ -111,6 +119,21 @@ torch::Tensor scalar_tensor(int64_t value) {
   return torch::full({1}, value,
                      torch::TensorOptions().dtype(torch::kInt64).device(
                          torch::kCPU));
+}
+
+int collective_error(Runtime* runtime, int local_status) {
+  try {
+    auto tensor = scalar_tensor(local_status == 0 ? 0 : 1);
+    std::vector<at::Tensor> tensors{tensor};
+    c10d::AllreduceOptions opts;
+    opts.reduceOp = c10d::ReduceOp::SUM;
+    runtime->pg->allreduce(tensors, opts)->wait();
+    return tensor.item<int64_t>() == 0 ? PNC_COMMUX_SUCCESS
+                                       : PNC_COMMUX_ERR_RUNTIME;
+  } catch (const std::exception& e) {
+    set_error("commux collective error check failed: %s", e.what());
+    return PNC_COMMUX_ERR_RUNTIME;
+  }
 }
 
 }  // namespace
@@ -330,6 +353,102 @@ int pnc_commux_recv_bytes(void* data, int64_t nbytes, int src, int tag) {
     set_error("commux recv_bytes failed: %s", e.what());
     return PNC_COMMUX_ERR_RUNTIME;
   }
+}
+
+int pnc_commux_file_open(const char* path, int flags, int mode,
+                         int64_t* handlep) {
+  std::lock_guard<std::mutex> lock(g_mutex);
+  Runtime* runtime = runtime_or_error();
+  if (handlep == nullptr || path == nullptr) {
+    set_error("pnc_commux_file_open requires path and handle output");
+    return PNC_COMMUX_ERR_ARG;
+  }
+  if (runtime == nullptr) return PNC_COMMUX_ERR_RUNTIME;
+
+  int fd = ::open(path, flags, static_cast<mode_t>(mode));
+  int local_status = fd >= 0 ? 0 : errno;
+  if (local_status != 0)
+    set_error("open('%s') failed on rank %d: %s", path, runtime->rank,
+              std::strerror(local_status));
+  int cerr = collective_error(runtime, local_status);
+  if (cerr != PNC_COMMUX_SUCCESS) {
+    if (fd >= 0) ::close(fd);
+    return cerr;
+  }
+
+  int64_t handle = runtime->next_file_handle++;
+  runtime->files[handle] = fd;
+  *handlep = handle;
+  return PNC_COMMUX_SUCCESS;
+}
+
+int pnc_commux_file_close(int64_t handle) {
+  std::lock_guard<std::mutex> lock(g_mutex);
+  Runtime* runtime = runtime_or_error();
+  if (runtime == nullptr) return PNC_COMMUX_ERR_RUNTIME;
+  auto it = runtime->files.find(handle);
+  if (it == runtime->files.end()) {
+    set_error("invalid commux file handle %" PRId64, handle);
+    return PNC_COMMUX_ERR_ARG;
+  }
+  int fd = it->second;
+  runtime->files.erase(it);
+  int local_status = ::close(fd) == 0 ? 0 : errno;
+  if (local_status != 0)
+    set_error("close failed on rank %d: %s", runtime->rank,
+              std::strerror(local_status));
+  return collective_error(runtime, local_status);
+}
+
+int pnc_commux_file_pwrite(int64_t handle, const void* data, int64_t nbytes,
+                           int64_t offset) {
+  std::lock_guard<std::mutex> lock(g_mutex);
+  Runtime* runtime = runtime_or_error();
+  if (runtime == nullptr) return PNC_COMMUX_ERR_RUNTIME;
+  if (nbytes < 0 || offset < 0 || (nbytes > 0 && data == nullptr)) {
+    set_error("invalid pwrite arguments");
+    return PNC_COMMUX_ERR_ARG;
+  }
+  auto it = runtime->files.find(handle);
+  if (it == runtime->files.end()) {
+    set_error("invalid commux file handle %" PRId64, handle);
+    return PNC_COMMUX_ERR_ARG;
+  }
+
+  const char* ptr = static_cast<const char*>(data);
+  int64_t done = 0;
+  while (done < nbytes) {
+    ssize_t n = ::pwrite(it->second, ptr + done,
+                         static_cast<size_t>(nbytes - done),
+                         static_cast<off_t>(offset + done));
+    if (n < 0) {
+      set_error("pwrite failed on rank %d: %s", runtime->rank,
+                std::strerror(errno));
+      return PNC_COMMUX_ERR_RUNTIME;
+    }
+    if (n == 0) {
+      set_error("pwrite made no progress on rank %d", runtime->rank);
+      return PNC_COMMUX_ERR_RUNTIME;
+    }
+    done += n;
+  }
+  return PNC_COMMUX_SUCCESS;
+}
+
+int pnc_commux_file_sync(int64_t handle) {
+  std::lock_guard<std::mutex> lock(g_mutex);
+  Runtime* runtime = runtime_or_error();
+  if (runtime == nullptr) return PNC_COMMUX_ERR_RUNTIME;
+  auto it = runtime->files.find(handle);
+  if (it == runtime->files.end()) {
+    set_error("invalid commux file handle %" PRId64, handle);
+    return PNC_COMMUX_ERR_ARG;
+  }
+  int local_status = ::fsync(it->second) == 0 ? 0 : errno;
+  if (local_status != 0)
+    set_error("fsync failed on rank %d: %s", runtime->rank,
+              std::strerror(local_status));
+  return collective_error(runtime, local_status);
 }
 
 }  // extern "C"

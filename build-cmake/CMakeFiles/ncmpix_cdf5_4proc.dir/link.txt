@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/ncmpix_cdf5_4proc.dir/test/ncmpix_cdf5_4proc.c.o -o ncmpix_cdf5_4proc  -Wl,-rpath,/home/chengcli/scix/repos/pnetcdf/build-cmake libpnc.so.0.1.0 -lnetcdf

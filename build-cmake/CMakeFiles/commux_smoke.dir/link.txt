@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/commux_smoke.dir/test/commux_smoke.c.o -o commux_smoke  -Wl,-rpath,/home/chengcli/scix/repos/pnetcdf/build-cmake libpnetcdf.so.8.0.0 libpnc.so.0.1.0
