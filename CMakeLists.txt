@@ -158,9 +158,9 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
   file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/src/include")
   configure_file(src/include/pnetcdf_comm.h.in "${CMAKE_CURRENT_BINARY_DIR}/src/include/pnetcdf_comm.h" @ONLY)
 
-  add_library(pnc src/comm/pnc_commux_runtime.cpp)
-  target_sources(pnc PRIVATE src/comm/pnc_netcdf_io.cpp)
-  target_include_directories(pnc
+  add_library(pinc src/comm/pinc_commux_runtime.cpp)
+  target_sources(pinc PRIVATE src/comm/pinc_netcdf_io.cpp)
+  target_include_directories(pinc
     PUBLIC
       "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/src/include>"
       "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/include>"
@@ -170,31 +170,32 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
       "${COMMUX_UCX_INCLUDE_DIR}"
       "${TORCH_INSTALL_PREFIX}/include"
       "${TORCH_INSTALL_PREFIX}/include/torch/csrc/api/include")
-  target_compile_definitions(pnc PRIVATE _GLIBCXX_USE_CXX11_ABI=${TORCH_CXX11_ABI})
-  target_link_libraries(pnc PRIVATE
+  target_compile_definitions(pinc PRIVATE _GLIBCXX_USE_CXX11_ABI=${TORCH_CXX11_ABI})
+  target_link_libraries(pinc PRIVATE
     "${COMMUX_DIR}/lib/libcommux.so"
     "${TORCH_LIBRARY_DIR}/libtorch.so"
     "${TORCH_LIBRARY_DIR}/libtorch_cpu.so"
     "${TORCH_LIBRARY_DIR}/libc10.so"
     netcdf)
   if(EXISTS "${COMMUX_DIR}/lib/libcommux_io.so")
-    target_link_libraries(pnc PRIVATE "${COMMUX_DIR}/lib/libcommux_io.so")
+    target_link_libraries(pinc PRIVATE "${COMMUX_DIR}/lib/libcommux_io.so")
   endif()
   if(COMMUX_DIR)
-    set(_pnc_commux_runtime_rpath "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
+    set(_pinc_commux_runtime_rpath "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
     if(SKBUILD)
-      set(_pnc_commux_runtime_rpath "$ORIGIN;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
+      set(_pinc_commux_runtime_rpath "$ORIGIN;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
     endif()
-    set_target_properties(pnc PROPERTIES
+    set_target_properties(pinc PROPERTIES
       BUILD_RPATH "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
-      INSTALL_RPATH "${_pnc_commux_runtime_rpath}")
+      INSTALL_RPATH "${_pinc_commux_runtime_rpath}")
   endif()
-  set_target_properties(pnc PROPERTIES
-    OUTPUT_NAME pnc
+  set_target_properties(pinc PROPERTIES
+    OUTPUT_NAME pinc
+    POSITION_INDEPENDENT_CODE ON
     VERSION 0.1.0
     SOVERSION 0)
 
-  add_library(pnetcdf src/comm/pnc_comm_commux.c)
+  add_library(pnetcdf src/comm/pinc_comm_commux.c)
   target_compile_definitions(pnetcdf PRIVATE PNETCDF_COMMUX_ONLY=1)
   target_include_directories(pnetcdf
     PUBLIC
@@ -221,7 +222,7 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
       BUILD_RPATH "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
       INSTALL_RPATH "${_pnc_commux_rpath}")
   endif()
-  target_link_libraries(pnetcdf PUBLIC pnc)
+  target_link_libraries(pnetcdf PUBLIC pinc)
   set_target_properties(pnetcdf PROPERTIES
     OUTPUT_NAME pnetcdf
     VERSION 8.0.0
@@ -231,7 +232,7 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
     ARCHIVE DESTINATION "${PNETCDF_INSTALL_LIBDIR}"
     LIBRARY DESTINATION "${PNETCDF_INSTALL_LIBDIR}"
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
-  install(TARGETS pnc
+  install(TARGETS pinc
     ARCHIVE DESTINATION "${PNETCDF_INSTALL_LIBDIR}"
     LIBRARY DESTINATION "${PNETCDF_INSTALL_LIBDIR}"
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
@@ -246,7 +247,7 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
       set_target_properties(pnetcdf_commux_py PROPERTIES
         PREFIX ""
         OUTPUT_NAME "_pnetcdf_commux"
-        BUILD_RPATH "$<TARGET_FILE_DIR:pnc>;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
+        BUILD_RPATH "$<TARGET_FILE_DIR:pinc>;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
         INSTALL_RPATH "$ORIGIN/lib;$ORIGIN;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
       target_compile_definitions(pnetcdf_commux_py PRIVATE _GLIBCXX_USE_CXX11_ABI=${TORCH_CXX11_ABI})
       target_include_directories(pnetcdf_commux_py
@@ -254,7 +255,7 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
           "${CMAKE_CURRENT_SOURCE_DIR}/src/include"
           "${TORCH_INSTALL_PREFIX}/include"
           "${TORCH_INSTALL_PREFIX}/include/torch/csrc/api/include")
-      target_link_libraries(pnetcdf_commux_py PRIVATE pnc Python3::Module)
+      target_link_libraries(pnetcdf_commux_py PRIVATE pinc Python3::Module)
       install(TARGETS pnetcdf_commux_py LIBRARY DESTINATION "${PNETCDF_INSTALL_PYDIR}")
     endif()
   endif()
@@ -263,11 +264,11 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
     target_link_libraries(commux_smoke PRIVATE pnetcdf)
     add_test(NAME commux_smoke COMMAND commux_smoke)
     add_executable(commux_c_4proc test/commux_c_4proc.c)
-    target_link_libraries(commux_c_4proc PRIVATE pnc)
+    target_link_libraries(commux_c_4proc PRIVATE pinc)
     add_executable(ncmpix_cdf5_4proc test/ncmpix_cdf5_4proc.c)
-    target_link_libraries(ncmpix_cdf5_4proc PRIVATE pnc netcdf)
+    target_link_libraries(ncmpix_cdf5_4proc PRIVATE pinc netcdf)
     add_executable(ncmpix_record_4proc test/ncmpix_record_4proc.c)
-    target_link_libraries(ncmpix_record_4proc PRIVATE pnc netcdf)
+    target_link_libraries(ncmpix_record_4proc PRIVATE pinc netcdf)
 
     execute_process(
       COMMAND "${Python3_EXECUTABLE}" -c "import shutil; print(shutil.which('torchrun') or '')"
@@ -424,9 +425,9 @@ foreach(name attr_getput var_getput)
              "${CMAKE_CURRENT_SOURCE_DIR}/src/dispatchers/${name}.m4")
 endforeach()
 
-set(COMM_SOURCES src/comm/pnc_comm_mpi.c)
+set(COMM_SOURCES src/comm/pinc_comm_mpi.c)
 if(PNETCDF_COMM_BACKEND STREQUAL "commux")
-  set(COMM_SOURCES src/comm/pnc_comm_commux.c)
+  set(COMM_SOURCES src/comm/pinc_comm_commux.c)
 endif()
 
 set(COMMON_SOURCES
