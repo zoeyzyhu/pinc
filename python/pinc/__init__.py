@@ -1,7 +1,7 @@
 """Python package for the PnetCDF commux C ABI.
 
-The package distributes the public C headers under ``pnc/include`` and
-``libpnc`` under ``pnc/lib``. The optional Python API is a thin binding over
+The package distributes the public C headers under ``pinc/include`` and
+``libpnc`` under ``pinc/lib``. The optional Python API is a thin binding over
 the same C ABI used by C callers.
 """
 

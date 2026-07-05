@@ -5,8 +5,8 @@ requires = [
 build-backend = "scikit_build_core.build"
 
 [project]
-name = "pnc"
-version = "1.15.0"
+name = "pinc"
+version = "0.1.0"
 description = "PnetCDF communication backend experiments with commux/UCX support"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -24,7 +24,7 @@ dependencies = ["commux", "torch"]
 [tool.scikit-build]
 cmake.version = ">=3.18"
 cmake.build-type = "Release"
-wheel.packages = ["python/pnc"]
+wheel.packages = ["python/pinc"]
 
 [tool.scikit-build.cmake.define]
 PNETCDF_COMM_BACKEND = "commux"
