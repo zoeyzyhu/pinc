@@ -7,7 +7,7 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "pinc"
 version = "0.1.0"
-description = "PnetCDF communication backend experiments with commux/UCX support"
+description = "Parallel NetCDF I/O with UCX Communication"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "See COPYRIGHT" }
