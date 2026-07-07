@@ -1,0 +1,50 @@
+# Pre-commit hooks for pinc's own sources: the commux communication backend
+# and the Python (pybind11) bindings. This repository vendors the upstream
+# PnetCDF tree, so every hook is scoped with `files:` to pinc-authored paths to
+# avoid reformatting or flagging vendored code.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        files: ^(src/comm/|src/include/pnetcdf_comm(ux)?\.|python/|pyproject\.toml|\.github/workflows/|\.pre-commit-config\.yaml)
+      - id: end-of-file-fixer
+        files: ^(src/comm/|src/include/pnetcdf_comm(ux)?\.|python/|pyproject\.toml|\.github/workflows/|\.pre-commit-config\.yaml)
+      - id: mixed-line-ending
+        files: ^(src/comm/|src/include/pnetcdf_comm(ux)?\.|python/|pyproject\.toml|\.github/workflows/|\.pre-commit-config\.yaml)
+      - id: check-merge-conflict
+      - id: check-toml
+        files: ^pyproject\.toml$
+      - id: check-ast
+        files: ^python/.*\.py$
+      - id: check-docstring-first
+        files: ^python/.*\.py$
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.26.3
+    hooks:
+      - id: check-github-workflows
+
+  # C/C++ formatting (Google style) -- pinc-authored comm backend + pybind
+  # sources only. The pnetcdf_comm.h.in template is excluded (it carries
+  # @configure@ placeholders that clang-format would mangle).
+  - repo: https://github.com/pocc/pre-commit-hooks
+    rev: v1.3.5
+    hooks:
+      - id: clang-format
+        name: Fix *.c,*.cc,*.cpp,*.h,*.hpp
+        entry: clang-format
+        language: system
+        files: ^(src/comm/.*\.(c|cpp|h|hpp)|src/include/pnetcdf_commux\.h|python/csrc/.*\.cpp)$
+        args: ["-i", "-style=Google"]
+
+  # Python formatting -- pinc-authored only. (Unused-import pruning is
+  # intentionally not run: pinc/__init__.py imports torch purely for its
+  # shared-library side effect, which such tools would strip.)
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+        args: ["--line-length", "79"]
+        files: ^python/.*\.py$

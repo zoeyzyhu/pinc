@@ -1,5 +1,4 @@
 #include <pnetcdf_commux.h>
-
 #include <pybind11/pybind11.h>
 
 #include <stdexcept>
@@ -27,9 +26,10 @@ PYBIND11_MODULE(_pnetcdf_commux, m) {
                    int world_size) {
     check(pnc_commux_init(backend, init_method, rank, world_size));
   });
-  m.def("init_env", [](const char* backend) {
-    check(pnc_commux_init_env(backend));
-  }, py::arg("backend") = "ucx");
+  m.def(
+      "init_env",
+      [](const char* backend) { check(pnc_commux_init_env(backend)); },
+      py::arg("backend") = "ucx");
   m.def("finalize", []() { check(pnc_commux_finalize()); });
   m.def("rank", []() {
     int rank = -1;

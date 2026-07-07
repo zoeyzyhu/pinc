@@ -139,17 +139,22 @@ set(IN_PLACE_SWAP 0)
 if(PNETCDF_COMM_BACKEND STREQUAL "commux")
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
   if(NOT COMMUX_UCX_INCLUDE_DIR)
-    find_path(COMMUX_UCX_INCLUDE_DIR
+    # Search into a fresh variable: find_path skips the search when its result
+    # variable is already a cached value, and COMMUX_UCX_INCLUDE_DIR is declared
+    # above as an (empty) cache option. Distros differ in layout -- Debian ships
+    # ucp/api/ucp.h under /usr/include, RHEL/manylinux under /usr/include/ucx.
+    find_path(_PNC_UCX_INCLUDE_DIR
       NAMES ucp/api/ucp.h
       HINTS
         "${COMMUX_DIR}/include"
-        "$ENV{UCX_ROOT}/include")
-  endif()
-  if(NOT COMMUX_UCX_INCLUDE_DIR
-     AND EXISTS "/home/chengcli/scix/repos/commux/build/_deps/commux-ucx/install/include/ucp/api/ucp.h")
-    set(COMMUX_UCX_INCLUDE_DIR
-      "/home/chengcli/scix/repos/commux/build/_deps/commux-ucx/install/include"
-      CACHE PATH "UCX include directory used by commux" FORCE)
+        "$ENV{UCX_ROOT}/include"
+      PATHS
+        /usr/include
+        /usr/include/ucx)
+    if(_PNC_UCX_INCLUDE_DIR)
+      set(COMMUX_UCX_INCLUDE_DIR "${_PNC_UCX_INCLUDE_DIR}"
+        CACHE PATH "UCX include directory used by commux" FORCE)
+    endif()
   endif()
   if(NOT COMMUX_UCX_INCLUDE_DIR)
     message(FATAL_ERROR
@@ -183,7 +188,10 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
   if(COMMUX_DIR)
     set(_pnc_commux_runtime_rpath "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
     if(SKBUILD)
-      set(_pnc_commux_runtime_rpath "$ORIGIN;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
+      # In the wheel, commux and torch are sibling site-packages while libpnc
+      # lives in pinc/lib, so reach them via $ORIGIN-relative paths that stay
+      # valid regardless of the install prefix.
+      set(_pnc_commux_runtime_rpath "$ORIGIN;$ORIGIN/../../commux/lib;$ORIGIN/../../torch/lib")
     endif()
     set_target_properties(pnc PROPERTIES
       BUILD_RPATH "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
@@ -215,7 +223,8 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
     endif()
     set(_pnc_commux_rpath "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
     if(SKBUILD)
-      set(_pnc_commux_rpath "$ORIGIN;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
+      # See pnc above: sibling site-packages, reached relative to pinc/lib.
+      set(_pnc_commux_rpath "$ORIGIN;$ORIGIN/../../commux/lib;$ORIGIN/../../torch/lib")
     endif()
     set_target_properties(pnetcdf PROPERTIES
       BUILD_RPATH "${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
@@ -243,11 +252,17 @@ if(PNETCDF_COMM_BACKEND STREQUAL "commux")
     find_package(Python3 QUIET COMPONENTS Development.Module)
     if(Python3_Development.Module_FOUND)
       add_library(pnetcdf_commux_py MODULE python/csrc/pnetcdf_commux.cpp)
+      set(_pnc_py_install_rpath "$ORIGIN/lib;$ORIGIN;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
+      if(SKBUILD)
+        # Wheel layout: _pnetcdf_commux.so sits in pinc/, libpnc in pinc/lib,
+        # and commux/torch are sibling site-packages one level up.
+        set(_pnc_py_install_rpath "$ORIGIN/lib;$ORIGIN;$ORIGIN/../commux/lib;$ORIGIN/../torch/lib")
+      endif()
       set_target_properties(pnetcdf_commux_py PROPERTIES
         PREFIX ""
         OUTPUT_NAME "_pnetcdf_commux"
         BUILD_RPATH "$<TARGET_FILE_DIR:pnc>;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}"
-        INSTALL_RPATH "$ORIGIN/lib;$ORIGIN;${COMMUX_DIR}/lib;${TORCH_LIBRARY_DIR}")
+        INSTALL_RPATH "${_pnc_py_install_rpath}")
       target_compile_definitions(pnetcdf_commux_py PRIVATE _GLIBCXX_USE_CXX11_ABI=${TORCH_CXX11_ABI})
       target_include_directories(pnetcdf_commux_py
         PRIVATE
