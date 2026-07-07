@@ -139,17 +139,22 @@ set(IN_PLACE_SWAP 0)
 if(PNETCDF_COMM_BACKEND STREQUAL "commux")
   find_package(Python3 REQUIRED COMPONENTS Interpreter)
   if(NOT COMMUX_UCX_INCLUDE_DIR)
-    find_path(COMMUX_UCX_INCLUDE_DIR
+    # Search into a fresh variable: find_path skips the search when its result
+    # variable is already a cached value, and COMMUX_UCX_INCLUDE_DIR is declared
+    # above as an (empty) cache option. Distros differ in layout -- Debian ships
+    # ucp/api/ucp.h under /usr/include, RHEL/manylinux under /usr/include/ucx.
+    find_path(_PNC_UCX_INCLUDE_DIR
       NAMES ucp/api/ucp.h
       HINTS
         "${COMMUX_DIR}/include"
-        "$ENV{UCX_ROOT}/include")
-  endif()
-  if(NOT COMMUX_UCX_INCLUDE_DIR
-     AND EXISTS "/home/chengcli/scix/repos/commux/build/_deps/commux-ucx/install/include/ucp/api/ucp.h")
-    set(COMMUX_UCX_INCLUDE_DIR
-      "/home/chengcli/scix/repos/commux/build/_deps/commux-ucx/install/include"
-      CACHE PATH "UCX include directory used by commux" FORCE)
+        "$ENV{UCX_ROOT}/include"
+      PATHS
+        /usr/include
+        /usr/include/ucx)
+    if(_PNC_UCX_INCLUDE_DIR)
+      set(COMMUX_UCX_INCLUDE_DIR "${_PNC_UCX_INCLUDE_DIR}"
+        CACHE PATH "UCX include directory used by commux" FORCE)
+    endif()
   endif()
   if(NOT COMMUX_UCX_INCLUDE_DIR)
     message(FATAL_ERROR
