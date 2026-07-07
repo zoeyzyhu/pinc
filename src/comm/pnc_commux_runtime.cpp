@@ -9,25 +9,24 @@
  * wrappers over this C ABI.
  */
 
+#include <fcntl.h>
 #include <pnetcdf_commux.h>
-
-#include <commux/process_group_ucx.hpp>
+#include <sys/types.h>
 #include <torch/torch.h>
-#include <torch/csrc/distributed/c10d/TCPStore.hpp>
+#include <unistd.h>
 
-#include <cstdio>
+#include <cerrno>
+#include <cinttypes>
+#include <commux/process_group_ucx.hpp>
 #include <cstdarg>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cerrno>
-#include <fcntl.h>
-#include <cinttypes>
 #include <map>
 #include <memory>
 #include <mutex>
 #include <string>
-#include <sys/types.h>
-#include <unistd.h>
+#include <torch/csrc/distributed/c10d/TCPStore.hpp>
 #include <vector>
 
 namespace {
@@ -123,9 +122,9 @@ Runtime* runtime_or_error() {
 }
 
 torch::Tensor scalar_tensor(int64_t value) {
-  return torch::full({1}, value,
-                     torch::TensorOptions().dtype(torch::kInt64).device(
-                         torch::kCPU));
+  return torch::full(
+      {1}, value,
+      torch::TensorOptions().dtype(torch::kInt64).device(torch::kCPU));
 }
 
 int collective_error(Runtime* runtime, int local_status) {
@@ -212,8 +211,7 @@ int pnc_commux_init_env(const char* backend) {
 int pnc_commux_finalize(void) {
   std::lock_guard<std::mutex> lock(g_mutex);
   try {
-    if (g_runtime && g_runtime->pg)
-      g_runtime->pg->barrier()->wait();
+    if (g_runtime && g_runtime->pg) g_runtime->pg->barrier()->wait();
     g_runtime.reset();
     g_last_error[0] = '\0';
     return PNC_COMMUX_SUCCESS;
@@ -313,7 +311,8 @@ int pnc_commux_recv_int64(int src, int tag, int64_t* valuep) {
   }
   if (runtime == nullptr) return PNC_COMMUX_ERR_RUNTIME;
   try {
-    auto tensor = torch::zeros({1}, torch::TensorOptions().dtype(torch::kInt64));
+    auto tensor =
+        torch::zeros({1}, torch::TensorOptions().dtype(torch::kInt64));
     std::vector<at::Tensor> tensors{tensor};
     runtime->pg->recv(tensors, src, tag)->wait();
     *valuep = tensor.item<int64_t>();
@@ -333,8 +332,10 @@ int pnc_commux_send_bytes(const void* data, int64_t nbytes, int dst, int tag) {
     return PNC_COMMUX_ERR_ARG;
   }
   try {
-    auto tensor = torch::empty({nbytes}, torch::TensorOptions().dtype(torch::kUInt8));
-    if (nbytes > 0) std::memcpy(tensor.data_ptr(), data, static_cast<size_t>(nbytes));
+    auto tensor =
+        torch::empty({nbytes}, torch::TensorOptions().dtype(torch::kUInt8));
+    if (nbytes > 0)
+      std::memcpy(tensor.data_ptr(), data, static_cast<size_t>(nbytes));
     std::vector<at::Tensor> tensors{tensor};
     runtime->pg->send(tensors, dst, tag)->wait();
     return PNC_COMMUX_SUCCESS;
@@ -353,10 +354,12 @@ int pnc_commux_recv_bytes(void* data, int64_t nbytes, int src, int tag) {
     return PNC_COMMUX_ERR_ARG;
   }
   try {
-    auto tensor = torch::empty({nbytes}, torch::TensorOptions().dtype(torch::kUInt8));
+    auto tensor =
+        torch::empty({nbytes}, torch::TensorOptions().dtype(torch::kUInt8));
     std::vector<at::Tensor> tensors{tensor};
     runtime->pg->recv(tensors, src, tag)->wait();
-    if (nbytes > 0) std::memcpy(data, tensor.data_ptr(), static_cast<size_t>(nbytes));
+    if (nbytes > 0)
+      std::memcpy(data, tensor.data_ptr(), static_cast<size_t>(nbytes));
     return PNC_COMMUX_SUCCESS;
   } catch (const std::exception& e) {
     set_error("commux recv_bytes failed: %s", e.what());
@@ -427,9 +430,9 @@ int pnc_commux_file_pwrite(int64_t handle, const void* data, int64_t nbytes,
   const char* ptr = static_cast<const char*>(data);
   int64_t done = 0;
   while (done < nbytes) {
-    ssize_t n = ::pwrite(it->second, ptr + done,
-                         static_cast<size_t>(nbytes - done),
-                         static_cast<off_t>(offset + done));
+    ssize_t n =
+        ::pwrite(it->second, ptr + done, static_cast<size_t>(nbytes - done),
+                 static_cast<off_t>(offset + done));
     if (n < 0) {
       set_error("pwrite failed on rank %d: %s", runtime->rank,
                 std::strerror(errno));

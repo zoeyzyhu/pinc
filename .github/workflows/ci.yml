@@ -24,7 +24,36 @@ env:
 # the pinc wheel links commux/torch at runtime via rpath into their installed
 # packages, so those libs are not vendored here.
 jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install style checkers
+        # Pin clang-format so formatting is reproducible across runs and dev
+        # machines (the hook uses whatever clang-format is on PATH).
+        run: pip install --user clang-format==20.1.4
+
+      - name: Cache pre-commit
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pre-commit
+          key: ${{ runner.os }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pre-commit-
+
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.1
+
   build-and-test:
+    needs: pre-commit
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:

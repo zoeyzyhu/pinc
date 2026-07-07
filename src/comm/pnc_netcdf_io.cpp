@@ -2,16 +2,15 @@
  * Minimal UCX-coordinated CDF-5 file API for snapy pnetcdf output.
  */
 
+#include <fcntl.h>
+#include <netcdf.h>
 #include <pnetcdf_comm.h>
 #include <pnetcdf_commux.h>
-
-#include <netcdf.h>
 
 #include <algorithm>
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include <fcntl.h>
 #include <fstream>
 #include <functional>
 #include <iterator>
@@ -207,8 +206,8 @@ bool parse_cdf5_layout(FileState& st) {
     uint64_t nelems = r.u64();
     int size = xtype_size(xtype);
     if (size <= 0) return false;
-    r.skip(pad4(static_cast<PNC_Offset>(size) *
-                static_cast<PNC_Offset>(nelems)));
+    r.skip(
+        pad4(static_cast<PNC_Offset>(size) * static_cast<PNC_Offset>(nelems)));
   }
 
   tag = r.u32();
@@ -272,8 +271,7 @@ void append_float_be(std::vector<unsigned char>& out, float value) {
 PNC_Offset row_major_offset(const std::vector<PNC_Offset>& dims,
                             const std::vector<PNC_Offset>& index) {
   PNC_Offset offset = 0;
-  for (size_t i = 0; i < dims.size(); ++i)
-    offset = offset * dims[i] + index[i];
+  for (size_t i = 0; i < dims.size(); ++i) offset = offset * dims[i] + index[i];
   return offset;
 }
 
@@ -322,10 +320,10 @@ int direct_write_float(FileState& st, int varid, const PNC_Offset* start,
       PNC_Offset value_offset = linear_prefix * count[last];
       for (PNC_Offset i = 0; i < count[last]; ++i)
         append_float_be(bytes, value[value_offset + i]);
-      return pnc_commux_file_pwrite(
-                 st.file_handle, bytes.data(),
-                 static_cast<int64_t>(bytes.size()),
-                 static_cast<int64_t>(file_offset)) == PNC_COMMUX_SUCCESS
+      return pnc_commux_file_pwrite(st.file_handle, bytes.data(),
+                                    static_cast<int64_t>(bytes.size()),
+                                    static_cast<int64_t>(file_offset)) ==
+                     PNC_COMMUX_SUCCESS
                  ? NC_NOERR
                  : NC_EINVAL;
     }
@@ -473,7 +471,8 @@ int ncmpix_put_att_text(int ncid, int varid, const char* name, PNC_Offset len,
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
   if (st->rank != 0) return NC_NOERR;
-  return nc_put_att_text(st->ncid, varid, name, static_cast<size_t>(len), value);
+  return nc_put_att_text(st->ncid, varid, name, static_cast<size_t>(len),
+                         value);
 }
 
 int ncmpix_put_att_int(int ncid, int varid, const char* name, nc_type xtype,
@@ -490,8 +489,8 @@ int ncmpix_put_att_float(int ncid, int varid, const char* name, nc_type xtype,
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
   if (st->rank != 0) return NC_NOERR;
-  return nc_put_att_float(st->ncid, varid, name, xtype, static_cast<size_t>(len),
-                          value);
+  return nc_put_att_float(st->ncid, varid, name, xtype,
+                          static_cast<size_t>(len), value);
 }
 
 int ncmpix_enddef(int ncid) {
@@ -525,8 +524,8 @@ int ncmpix_put_vara_float_all(int ncid, int varid, const PNC_Offset* start,
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
   PNC_Offset endrec = st->numrecs;
-  int direct_status = direct_write_float(*st, varid, start, count, value,
-                                         &endrec);
+  int direct_status =
+      direct_write_float(*st, varid, start, count, value, &endrec);
   if (direct_status != NC_ENOTBUILT)
     return finish_direct_write(*st, direct_status, endrec);
 
@@ -558,8 +557,8 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
   int status = NC_NOERR;
 
   PNC_Offset endrec = st->numrecs;
-  int direct_status = direct_write_float(*st, varid, start, count, value,
-                                         &endrec);
+  int direct_status =
+      direct_write_float(*st, varid, start, count, value, &endrec);
   if (direct_status != NC_ENOTBUILT) {
     status = finish_direct_write(*st, direct_status, endrec);
     st->req_status[req] = status;
@@ -571,10 +570,10 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
     status = nc_put_vara_float(st->ncid, varid, s.data(), c.data(), value);
     for (int r = 1; r < st->size; ++r) {
       std::vector<PNC_Offset> meta(1 + 2 * ndims);
-      if (pnc_commux_recv_bytes(meta.data(),
-                                static_cast<int64_t>(meta.size() *
-                                                     sizeof(PNC_Offset)),
-                                r, meta_tag) != PNC_COMMUX_SUCCESS) {
+      if (pnc_commux_recv_bytes(
+              meta.data(),
+              static_cast<int64_t>(meta.size() * sizeof(PNC_Offset)), r,
+              meta_tag) != PNC_COMMUX_SUCCESS) {
         status = NC_EINVAL;
         continue;
       }
@@ -591,10 +590,10 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
         remote_vals *= meta[1 + ndims + i];
       }
       std::vector<float> remote(static_cast<size_t>(remote_vals));
-      if (pnc_commux_recv_bytes(remote.data(),
-                                static_cast<int64_t>(remote.size() *
-                                                     sizeof(float)),
-                                r, data_tag) != PNC_COMMUX_SUCCESS) {
+      if (pnc_commux_recv_bytes(
+              remote.data(),
+              static_cast<int64_t>(remote.size() * sizeof(float)), r,
+              data_tag) != PNC_COMMUX_SUCCESS) {
         status = NC_EINVAL;
         continue;
       }
@@ -609,10 +608,9 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
       meta[1 + i] = start[i];
       meta[1 + ndims + i] = count[i];
     }
-    if (pnc_commux_send_bytes(meta.data(),
-                              static_cast<int64_t>(meta.size() *
-                                                   sizeof(PNC_Offset)),
-                              0, meta_tag) != PNC_COMMUX_SUCCESS ||
+    if (pnc_commux_send_bytes(
+            meta.data(), static_cast<int64_t>(meta.size() * sizeof(PNC_Offset)),
+            0, meta_tag) != PNC_COMMUX_SUCCESS ||
         pnc_commux_send_bytes(value, static_cast<int64_t>(nbytes), 0,
                               data_tag) != PNC_COMMUX_SUCCESS) {
       status = NC_EINVAL;
