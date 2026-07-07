@@ -65,8 +65,9 @@ jobs:
       - name: Build Linux wheel
         env:
           CIBW_PLATFORM: linux
-          # Match the image commux 0.2.1 was built in for torch/commux ABI parity.
-          CIBW_MANYLINUX_X86_64_IMAGE: docker.io/pytorch/manylinux2_28-builder:cuda12.8
+          # pinc is CPU-only, so use the stock manylinux image (not the heavy
+          # CUDA pytorch builder) and install CPU torch below.
+          CIBW_MANYLINUX_X86_64_IMAGE: quay.io/pypa/manylinux_2_28_x86_64
           CIBW_BUILD: cp${{ env.PY_VERSION }}*
           CIBW_ARCHS: ${{ env.LINUX_ARCH }}
           CIBW_SKIP: "*musllinux*"
@@ -87,13 +88,14 @@ jobs:
             yum install -y netcdf-devel ucx-devel
 
             pip install numpy 'cmake<=3.30' ninja scikit-build-core setuptools-scm patchelf wheel
-            pip install 'torch==2.10.0'
+            # CPU torch: pinc uses commux (a torch c10d backend) but needs no CUDA.
+            pip install 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
             pip install 'commux==0.2.1'
           # commux/torch libs resolve at runtime via rpath into their installed
           # packages, so exclude them from vendoring; libnetcdf (+ deps) is
           # vendored for a self-contained wheel.
           CIBW_REPAIR_WHEEL_COMMAND_LINUX: |
-            export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib64:/usr/lib64:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=/usr/local/lib64:/usr/lib64:$LD_LIBRARY_PATH
             auditwheel repair \
               --exclude 'libcommux*.so*' \
               --exclude 'libtorch*.so*' \
