@@ -59,4 +59,11 @@ jobs:
       - name: Smoke import + extension check
         run: |
           python -c "import pinc; print('pinc', pinc.__version__); print(pinc.include_dir)"
-          python -c "import pinc; assert hasattr(pinc, 'init'), 'commux extension (_pnetcdf_commux) failed to load'"
+          EXT=$(python -c "import pinc, glob, os; print(glob.glob(os.path.join(os.path.dirname(pinc.__file__), '_pnetcdf_commux*.so'))[0])")
+          echo "Extension: $EXT"
+          echo "--- RUNPATH (extension) ---"; readelf -d "$EXT" | grep -E 'RPATH|NEEDED' || true
+          echo "--- ldd (extension) ---"; ldd "$EXT" || true
+          LIBPNC=$(dirname "$EXT")/lib/libpnc.so
+          echo "--- ldd (libpnc) ---"; ldd "$LIBPNC" || true
+          echo "--- direct import ---"
+          python -c "from pinc import _pnetcdf_commux; print('extension OK')"
