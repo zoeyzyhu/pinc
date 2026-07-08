@@ -25,7 +25,7 @@ AUTOMAKE_OPTIONS = subdir-objects
 libpnetcdf_la_LIBADD = $(LTLIBOBJS)
 
 libpnetcdf_la_SOURCES =
-libpnetcdf_la_LIBADD += ../comm/libpnccomm.la
+libpnetcdf_la_LIBADD += ../comm/libpinccomm.la
 libpnetcdf_la_LIBADD += ../dispatchers/libdispatchers.la
 libpnetcdf_la_LIBADD += ../drivers/common/libcommon.la
 libpnetcdf_la_LIBADD += ../drivers/ncmpio/libncmpio.la
@@ -73,7 +73,7 @@ endif
 ../dispatchers/libdispatchers.la:
 	set -e; cd ../dispatchers && $(MAKE) $(MFLAGS)
 
-../comm/libpnccomm.la:
+../comm/libpinccomm.la:
 	set -e; cd ../comm && $(MAKE) $(MFLAGS)
 
 ../drivers/common/libcommon.la:

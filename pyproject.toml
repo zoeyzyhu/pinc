@@ -12,7 +12,7 @@ description = "Parallel NetCDF I/O with UCX Communication"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "See COPYRIGHT" }
-authors = [{ name = "Northwestern University and Argonne National Laboratory" }]
+authors = [{ name = "Zoey Hu", email = "zoey.zyhu@gmail.com" }]
 classifiers = [
   "Programming Language :: C",
   "Programming Language :: C++",

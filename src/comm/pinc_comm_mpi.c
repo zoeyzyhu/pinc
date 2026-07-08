@@ -11,12 +11,12 @@
 
 const char *ncmpix_comm_backend(void) { return "mpi"; }
 
-int ncmpix_create(PNC_Comm comm, const char *path, int cmode, PNC_Info info,
+int ncmpix_create(PINC_Comm comm, const char *path, int cmode, PINC_Info info,
                   int *ncidp) {
   return ncmpi_create(comm, path, cmode, info, ncidp);
 }
 
-int ncmpix_open(PNC_Comm comm, const char *path, int omode, PNC_Info info,
+int ncmpix_open(PINC_Comm comm, const char *path, int omode, PINC_Info info,
                 int *ncidp) {
   return ncmpi_open(comm, path, omode, info, ncidp);
 }

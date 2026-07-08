@@ -32,15 +32,15 @@ struct FileState {
   std::string path;
   bool define_mode = false;
   bool direct_io = false;
-  PNC_Offset numrecs = 0;
-  PNC_Offset record_size = 0;
+  PINC_Offset numrecs = 0;
+  PINC_Offset record_size = 0;
   int unlimited_dimid = -1;
   struct VarLayout {
     int xtype = 0;
-    PNC_Offset vsize = 0;
-    PNC_Offset begin = 0;
+    PINC_Offset vsize = 0;
+    PINC_Offset begin = 0;
     bool record = false;
-    std::vector<PNC_Offset> dim_lengths;
+    std::vector<PINC_Offset> dim_lengths;
   };
   std::map<int, VarLayout> vars;
 };
@@ -50,30 +50,30 @@ int g_next_handle = 1000;
 
 int ensure_comm(void) {
   int rank = 0;
-  int err = pnc_commux_rank(&rank);
-  if (err == PNC_COMMUX_SUCCESS) return NC_NOERR;
+  int err = pinc_commux_rank(&rank);
+  if (err == PINC_COMMUX_SUCCESS) return NC_NOERR;
   if (std::getenv("RANK") == nullptr && std::getenv("WORLD_SIZE") == nullptr)
     return NC_NOERR;
-  err = pnc_commux_init_env("ucx");
-  if (err == PNC_COMMUX_SUCCESS) return NC_NOERR;
+  err = pinc_commux_init_env("ucx");
+  if (err == PINC_COMMUX_SUCCESS) return NC_NOERR;
   return NC_EINVAL;
 }
 
 int rank(void) {
   int r = 0;
-  if (pnc_commux_rank(&r) != PNC_COMMUX_SUCCESS) return 0;
+  if (pinc_commux_rank(&r) != PINC_COMMUX_SUCCESS) return 0;
   return r;
 }
 
 int size(void) {
   int s = 1;
-  if (pnc_commux_size(&s) != PNC_COMMUX_SUCCESS) return 1;
+  if (pinc_commux_size(&s) != PINC_COMMUX_SUCCESS) return 1;
   return s;
 }
 
 int barrier(void) {
   if (size() <= 1) return NC_NOERR;
-  return pnc_commux_barrier() == PNC_COMMUX_SUCCESS ? NC_NOERR : NC_EINVAL;
+  return pinc_commux_barrier() == PINC_COMMUX_SUCCESS ? NC_NOERR : NC_EINVAL;
 }
 
 FileState* file_state(int ncid) {
@@ -82,7 +82,7 @@ FileState* file_state(int ncid) {
   return &it->second;
 }
 
-std::vector<size_t> to_size_t(const PNC_Offset* values, int n) {
+std::vector<size_t> to_size_t(const PINC_Offset* values, int n) {
   std::vector<size_t> out(n);
   for (int i = 0; i < n; ++i) out[i] = static_cast<size_t>(values[i]);
   return out;
@@ -94,7 +94,9 @@ int var_ndims(int ncid, int varid) {
   return ndims;
 }
 
-PNC_Offset pad4(PNC_Offset n) { return (n + 3) & ~static_cast<PNC_Offset>(3); }
+PINC_Offset pad4(PINC_Offset n) {
+  return (n + 3) & ~static_cast<PINC_Offset>(3);
+}
 
 int xtype_size(int xtype) {
   switch (xtype) {
@@ -158,12 +160,12 @@ struct Cdf5Reader {
     }
     std::string out(reinterpret_cast<const char*>(bytes.data() + pos),
                     static_cast<size_t>(len));
-    pos += static_cast<size_t>(pad4(static_cast<PNC_Offset>(len)));
+    pos += static_cast<size_t>(pad4(static_cast<PINC_Offset>(len)));
     if (pos > bytes.size()) ok = false;
     return out;
   }
 
-  void skip(PNC_Offset n) {
+  void skip(PINC_Offset n) {
     if (n < 0 || pos + static_cast<size_t>(n) > bytes.size()) {
       ok = false;
       return;
@@ -183,15 +185,15 @@ bool parse_cdf5_layout(FileState& st) {
     return false;
 
   r.pos = 4;
-  st.numrecs = static_cast<PNC_Offset>(r.u64());
+  st.numrecs = static_cast<PINC_Offset>(r.u64());
 
   uint32_t tag = r.u32();
   uint64_t ndims = r.u64();
   if (!r.ok || (tag != 0 && tag != 10)) return false;
-  std::vector<PNC_Offset> dim_lengths;
+  std::vector<PINC_Offset> dim_lengths;
   for (uint64_t i = 0; i < ndims; ++i) {
     (void)r.name();
-    PNC_Offset len = static_cast<PNC_Offset>(r.u64());
+    PINC_Offset len = static_cast<PINC_Offset>(r.u64());
     if (!r.ok) return false;
     if (len == 0 && st.unlimited_dimid < 0) st.unlimited_dimid = i;
     dim_lengths.push_back(len);
@@ -206,8 +208,8 @@ bool parse_cdf5_layout(FileState& st) {
     uint64_t nelems = r.u64();
     int size = xtype_size(xtype);
     if (size <= 0) return false;
-    r.skip(
-        pad4(static_cast<PNC_Offset>(size) * static_cast<PNC_Offset>(nelems)));
+    r.skip(pad4(static_cast<PINC_Offset>(size) *
+                static_cast<PINC_Offset>(nelems)));
   }
 
   tag = r.u32();
@@ -230,14 +232,14 @@ bool parse_cdf5_layout(FileState& st) {
       uint64_t nelems = r.u64();
       int size = xtype_size(xtype);
       if (size <= 0) return false;
-      r.skip(pad4(static_cast<PNC_Offset>(size) *
-                  static_cast<PNC_Offset>(nelems)));
+      r.skip(pad4(static_cast<PINC_Offset>(size) *
+                  static_cast<PINC_Offset>(nelems)));
     }
 
     FileState::VarLayout layout;
     layout.xtype = static_cast<int>(r.u32());
-    layout.vsize = static_cast<PNC_Offset>(r.u64());
-    layout.begin = static_cast<PNC_Offset>(r.u64());
+    layout.vsize = static_cast<PINC_Offset>(r.u64());
+    layout.begin = static_cast<PINC_Offset>(r.u64());
     if (!r.ok) return false;
     layout.record =
         !dimids.empty() && static_cast<int>(dimids[0]) == st.unlimited_dimid;
@@ -251,7 +253,7 @@ bool parse_cdf5_layout(FileState& st) {
   return r.ok;
 }
 
-void store_be64(unsigned char out[8], PNC_Offset value) {
+void store_be64(unsigned char out[8], PINC_Offset value) {
   uint64_t v = static_cast<uint64_t>(value);
   for (int i = 7; i >= 0; --i) {
     out[i] = static_cast<unsigned char>(v & 0xff);
@@ -268,16 +270,16 @@ void append_float_be(std::vector<unsigned char>& out, float value) {
   out.push_back(static_cast<unsigned char>(bits & 0xff));
 }
 
-PNC_Offset row_major_offset(const std::vector<PNC_Offset>& dims,
-                            const std::vector<PNC_Offset>& index) {
-  PNC_Offset offset = 0;
+PINC_Offset row_major_offset(const std::vector<PINC_Offset>& dims,
+                             const std::vector<PINC_Offset>& index) {
+  PINC_Offset offset = 0;
   for (size_t i = 0; i < dims.size(); ++i) offset = offset * dims[i] + index[i];
   return offset;
 }
 
-int direct_write_float(FileState& st, int varid, const PNC_Offset* start,
-                       const PNC_Offset* count, const float* value,
-                       PNC_Offset* endrecp) {
+int direct_write_float(FileState& st, int varid, const PINC_Offset* start,
+                       const PINC_Offset* count, const float* value,
+                       PINC_Offset* endrecp) {
   if (!st.direct_io || st.file_handle < 0) return NC_ENOTBUILT;
   auto it = st.vars.find(varid);
   if (it == st.vars.end()) return NC_ENOTBUILT;
@@ -291,22 +293,22 @@ int direct_write_float(FileState& st, int varid, const PNC_Offset* start,
 
   int elem_size = xtype_size(layout.xtype);
   int last = ndims - 1;
-  std::vector<PNC_Offset> prefix(std::max(0, last), 0);
-  PNC_Offset value_base = 0;
+  std::vector<PINC_Offset> prefix(std::max(0, last), 0);
+  PINC_Offset value_base = 0;
 
-  std::function<int(int, PNC_Offset)> write_runs =
-      [&](int dim, PNC_Offset linear_prefix) -> int {
+  std::function<int(int, PINC_Offset)> write_runs =
+      [&](int dim, PINC_Offset linear_prefix) -> int {
     if (dim == last) {
-      std::vector<PNC_Offset> file_index(ndims);
+      std::vector<PINC_Offset> file_index(ndims);
       for (int i = 0; i < last; ++i) file_index[i] = start[i] + prefix[i];
       file_index[last] = start[last];
 
-      PNC_Offset file_offset = 0;
+      PINC_Offset file_offset = 0;
       if (layout.record) {
-        std::vector<PNC_Offset> rec_dims(layout.dim_lengths.begin() + 1,
-                                         layout.dim_lengths.end());
-        std::vector<PNC_Offset> rec_index(file_index.begin() + 1,
-                                          file_index.end());
+        std::vector<PINC_Offset> rec_dims(layout.dim_lengths.begin() + 1,
+                                          layout.dim_lengths.end());
+        std::vector<PINC_Offset> rec_index(file_index.begin() + 1,
+                                           file_index.end());
         file_offset = layout.begin + file_index[0] * st.record_size +
                       row_major_offset(rec_dims, rec_index) * elem_size;
       } else {
@@ -317,18 +319,18 @@ int direct_write_float(FileState& st, int varid, const PNC_Offset* start,
 
       std::vector<unsigned char> bytes;
       bytes.reserve(static_cast<size_t>(count[last]) * sizeof(float));
-      PNC_Offset value_offset = linear_prefix * count[last];
-      for (PNC_Offset i = 0; i < count[last]; ++i)
+      PINC_Offset value_offset = linear_prefix * count[last];
+      for (PINC_Offset i = 0; i < count[last]; ++i)
         append_float_be(bytes, value[value_offset + i]);
-      return pnc_commux_file_pwrite(st.file_handle, bytes.data(),
-                                    static_cast<int64_t>(bytes.size()),
-                                    static_cast<int64_t>(file_offset)) ==
-                     PNC_COMMUX_SUCCESS
+      return pinc_commux_file_pwrite(st.file_handle, bytes.data(),
+                                     static_cast<int64_t>(bytes.size()),
+                                     static_cast<int64_t>(file_offset)) ==
+                     PINC_COMMUX_SUCCESS
                  ? NC_NOERR
                  : NC_EINVAL;
     }
 
-    for (PNC_Offset i = 0; i < count[dim]; ++i) {
+    for (PINC_Offset i = 0; i < count[dim]; ++i) {
       prefix[dim] = i;
       int err = write_runs(dim + 1, linear_prefix * count[dim] + i);
       if (err != NC_NOERR) return err;
@@ -340,26 +342,26 @@ int direct_write_float(FileState& st, int varid, const PNC_Offset* start,
   return write_runs(0, value_base);
 }
 
-int finish_direct_write(FileState& st, int local_status, PNC_Offset endrec) {
+int finish_direct_write(FileState& st, int local_status, PINC_Offset endrec) {
   int64_t failed = local_status == NC_NOERR ? 0 : 1;
   int64_t any_failed = 0;
-  if (pnc_commux_allreduce_int64(failed, PNC_COMMUX_SUM, &any_failed) !=
-      PNC_COMMUX_SUCCESS)
+  if (pinc_commux_allreduce_int64(failed, PINC_COMMUX_SUM, &any_failed) !=
+      PINC_COMMUX_SUCCESS)
     return NC_EINVAL;
   int status = any_failed == 0 ? NC_NOERR : NC_EINVAL;
 
   int64_t local_endrec = static_cast<int64_t>(endrec);
   int64_t max_endrec = 0;
-  if (pnc_commux_allreduce_int64(local_endrec, PNC_COMMUX_MAX, &max_endrec) !=
-      PNC_COMMUX_SUCCESS)
+  if (pinc_commux_allreduce_int64(local_endrec, PINC_COMMUX_MAX, &max_endrec) !=
+      PINC_COMMUX_SUCCESS)
     status = NC_EINVAL;
   if (status == NC_NOERR && max_endrec > st.numrecs) {
     unsigned char nrec[8];
-    store_be64(nrec, static_cast<PNC_Offset>(max_endrec));
-    if (pnc_commux_file_pwrite(st.file_handle, nrec, sizeof(nrec), 4) !=
-        PNC_COMMUX_SUCCESS)
+    store_be64(nrec, static_cast<PINC_Offset>(max_endrec));
+    if (pinc_commux_file_pwrite(st.file_handle, nrec, sizeof(nrec), 4) !=
+        PINC_COMMUX_SUCCESS)
       status = NC_EINVAL;
-    st.numrecs = static_cast<PNC_Offset>(max_endrec);
+    st.numrecs = static_cast<PINC_Offset>(max_endrec);
   }
   int berr = barrier();
   return status != NC_NOERR ? status : berr;
@@ -374,7 +376,8 @@ const char* ncmpix_strerror(int err) {
   return nc_strerror(err);
 }
 
-int ncmpix_create(PNC_Comm, const char* path, int cmode, PNC_Info, int* ncidp) {
+int ncmpix_create(PINC_Comm, const char* path, int cmode, PINC_Info,
+                  int* ncidp) {
   if (ncidp == nullptr) return NC_EINVAL;
   int err = ensure_comm();
   if (err != NC_NOERR) return err;
@@ -405,7 +408,7 @@ int ncmpix_create(PNC_Comm, const char* path, int cmode, PNC_Info, int* ncidp) {
   return NC_NOERR;
 }
 
-int ncmpix_open(PNC_Comm, const char* path, int omode, PNC_Info, int* ncidp) {
+int ncmpix_open(PINC_Comm, const char* path, int omode, PINC_Info, int* ncidp) {
   if (ncidp == nullptr || path == nullptr) return NC_EINVAL;
   int err = ensure_comm();
   if (err != NC_NOERR) return err;
@@ -428,10 +431,10 @@ int ncmpix_close(int ncid) {
   if (st == nullptr) return NC_EBADID;
   int err = NC_NOERR;
   if (st->file_handle >= 0) {
-    int serr = pnc_commux_file_sync(st->file_handle) == PNC_COMMUX_SUCCESS
+    int serr = pinc_commux_file_sync(st->file_handle) == PINC_COMMUX_SUCCESS
                    ? NC_NOERR
                    : NC_EINVAL;
-    int cerr = pnc_commux_file_close(st->file_handle) == PNC_COMMUX_SUCCESS
+    int cerr = pinc_commux_file_close(st->file_handle) == PINC_COMMUX_SUCCESS
                    ? NC_NOERR
                    : NC_EINVAL;
     if (err == NC_NOERR) err = serr != NC_NOERR ? serr : cerr;
@@ -443,7 +446,7 @@ int ncmpix_close(int ncid) {
   return err != NC_NOERR ? err : berr;
 }
 
-int ncmpix_def_dim(int ncid, const char* name, PNC_Offset len, int* idp) {
+int ncmpix_def_dim(int ncid, const char* name, PINC_Offset len, int* idp) {
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
   int id = st->next_dimid++;
@@ -466,7 +469,7 @@ int ncmpix_def_var(int ncid, const char* name, nc_type xtype, int ndims,
   return err;
 }
 
-int ncmpix_put_att_text(int ncid, int varid, const char* name, PNC_Offset len,
+int ncmpix_put_att_text(int ncid, int varid, const char* name, PINC_Offset len,
                         const char* value) {
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
@@ -476,7 +479,7 @@ int ncmpix_put_att_text(int ncid, int varid, const char* name, PNC_Offset len,
 }
 
 int ncmpix_put_att_int(int ncid, int varid, const char* name, nc_type xtype,
-                       PNC_Offset len, const int* value) {
+                       PINC_Offset len, const int* value) {
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
   if (st->rank != 0) return NC_NOERR;
@@ -485,7 +488,7 @@ int ncmpix_put_att_int(int ncid, int varid, const char* name, nc_type xtype,
 }
 
 int ncmpix_put_att_float(int ncid, int varid, const char* name, nc_type xtype,
-                         PNC_Offset len, const float* value) {
+                         PINC_Offset len, const float* value) {
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
   if (st->rank != 0) return NC_NOERR;
@@ -510,8 +513,8 @@ int ncmpix_enddef(int ncid) {
   st->direct_io = false;
   if (st->size > 1 && parse_cdf5_layout(*st)) {
     int64_t handle = -1;
-    if (pnc_commux_file_open(st->path.c_str(), O_RDWR, 0666, &handle) ==
-        PNC_COMMUX_SUCCESS) {
+    if (pinc_commux_file_open(st->path.c_str(), O_RDWR, 0666, &handle) ==
+        PINC_COMMUX_SUCCESS) {
       st->file_handle = handle;
       st->direct_io = true;
     }
@@ -519,11 +522,11 @@ int ncmpix_enddef(int ncid) {
   return barrier();
 }
 
-int ncmpix_put_vara_float_all(int ncid, int varid, const PNC_Offset* start,
-                              const PNC_Offset* count, const float* value) {
+int ncmpix_put_vara_float_all(int ncid, int varid, const PINC_Offset* start,
+                              const PINC_Offset* count, const float* value) {
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
-  PNC_Offset endrec = st->numrecs;
+  PINC_Offset endrec = st->numrecs;
   int direct_status =
       direct_write_float(*st, varid, start, count, value, &endrec);
   if (direct_status != NC_ENOTBUILT)
@@ -540,8 +543,8 @@ int ncmpix_put_vara_float_all(int ncid, int varid, const PNC_Offset* start,
   return err != NC_NOERR ? err : berr;
 }
 
-int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
-                           const PNC_Offset* count, const float* value,
+int ncmpix_iput_vara_float(int ncid, int varid, const PINC_Offset* start,
+                           const PINC_Offset* count, const float* value,
                            int* reqidp) {
   FileState* st = file_state(ncid);
   if (st == nullptr) return NC_EBADID;
@@ -551,12 +554,12 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
   int req = st->next_reqid++;
   int meta_tag = 9000 + req * 2;
   int data_tag = meta_tag + 1;
-  PNC_Offset nvals = 1;
+  PINC_Offset nvals = 1;
   for (int i = 0; i < ndims; ++i) nvals *= count[i];
-  PNC_Offset nbytes = nvals * static_cast<PNC_Offset>(sizeof(float));
+  PINC_Offset nbytes = nvals * static_cast<PINC_Offset>(sizeof(float));
   int status = NC_NOERR;
 
-  PNC_Offset endrec = st->numrecs;
+  PINC_Offset endrec = st->numrecs;
   int direct_status =
       direct_write_float(*st, varid, start, count, value, &endrec);
   if (direct_status != NC_ENOTBUILT) {
@@ -569,11 +572,11 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
   if (st->rank == 0) {
     status = nc_put_vara_float(st->ncid, varid, s.data(), c.data(), value);
     for (int r = 1; r < st->size; ++r) {
-      std::vector<PNC_Offset> meta(1 + 2 * ndims);
-      if (pnc_commux_recv_bytes(
+      std::vector<PINC_Offset> meta(1 + 2 * ndims);
+      if (pinc_commux_recv_bytes(
               meta.data(),
-              static_cast<int64_t>(meta.size() * sizeof(PNC_Offset)), r,
-              meta_tag) != PNC_COMMUX_SUCCESS) {
+              static_cast<int64_t>(meta.size() * sizeof(PINC_Offset)), r,
+              meta_tag) != PINC_COMMUX_SUCCESS) {
         status = NC_EINVAL;
         continue;
       }
@@ -583,17 +586,17 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
         continue;
       }
       std::vector<size_t> rs(ndims), rc(ndims);
-      PNC_Offset remote_vals = 1;
+      PINC_Offset remote_vals = 1;
       for (int i = 0; i < ndims; ++i) {
         rs[i] = static_cast<size_t>(meta[1 + i]);
         rc[i] = static_cast<size_t>(meta[1 + ndims + i]);
         remote_vals *= meta[1 + ndims + i];
       }
       std::vector<float> remote(static_cast<size_t>(remote_vals));
-      if (pnc_commux_recv_bytes(
+      if (pinc_commux_recv_bytes(
               remote.data(),
               static_cast<int64_t>(remote.size() * sizeof(float)), r,
-              data_tag) != PNC_COMMUX_SUCCESS) {
+              data_tag) != PINC_COMMUX_SUCCESS) {
         status = NC_EINVAL;
         continue;
       }
@@ -602,17 +605,18 @@ int ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset* start,
       if (status == NC_NOERR && werr != NC_NOERR) status = werr;
     }
   } else {
-    std::vector<PNC_Offset> meta(1 + 2 * ndims);
+    std::vector<PINC_Offset> meta(1 + 2 * ndims);
     meta[0] = ndims;
     for (int i = 0; i < ndims; ++i) {
       meta[1 + i] = start[i];
       meta[1 + ndims + i] = count[i];
     }
-    if (pnc_commux_send_bytes(
-            meta.data(), static_cast<int64_t>(meta.size() * sizeof(PNC_Offset)),
-            0, meta_tag) != PNC_COMMUX_SUCCESS ||
-        pnc_commux_send_bytes(value, static_cast<int64_t>(nbytes), 0,
-                              data_tag) != PNC_COMMUX_SUCCESS) {
+    if (pinc_commux_send_bytes(
+            meta.data(),
+            static_cast<int64_t>(meta.size() * sizeof(PINC_Offset)), 0,
+            meta_tag) != PINC_COMMUX_SUCCESS ||
+        pinc_commux_send_bytes(value, static_cast<int64_t>(nbytes), 0,
+                               data_tag) != PINC_COMMUX_SUCCESS) {
       status = NC_EINVAL;
     }
   }
