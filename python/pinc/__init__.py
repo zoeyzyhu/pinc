@@ -1,7 +1,7 @@
 """Python package for the PnetCDF commux C ABI.
 
 The package distributes the public C headers under ``pinc/include`` and
-``libpnc`` under ``pinc/lib``. The optional Python API is a thin binding over
+``libpinc`` under ``pinc/lib``. The optional Python API is a thin binding over
 the same C ABI used by C callers.
 """
 
@@ -17,7 +17,7 @@ package_root = Path(__file__).resolve().parent
 include_dir = package_root / "include"
 library_dir = package_root / "lib"
 
-# Import torch before the native extension: libcommux (pulled in by libpnc)
+# Import torch before the native extension: libcommux (pulled in by libpinc)
 # has a NEEDED on libtorch.so, and commux ships torch's libs only via torch's
 # own package. Importing torch first maps libtorch*/libc10 into the process so
 # the loader satisfies those NEEDED entries by soname.

@@ -16,15 +16,15 @@
 #if PNETCDF_COMM_BACKEND == PNETCDF_COMM_BACKEND_MPI
 #include <pnetcdf.h>
 
-typedef MPI_Comm     PNC_Comm;
-typedef MPI_Info     PNC_Info;
-typedef MPI_Datatype PNC_Datatype;
+typedef MPI_Comm     PINC_Comm;
+typedef MPI_Info     PINC_Info;
+typedef MPI_Datatype PINC_Datatype;
 
-#define PNC_COMM_WORLD     MPI_COMM_WORLD
-#define PNC_COMM_SELF      MPI_COMM_SELF
-#define PNC_COMM_NULL      MPI_COMM_NULL
-#define PNC_INFO_NULL      MPI_INFO_NULL
-#define PNC_DATATYPE_NULL  MPI_DATATYPE_NULL
+#define PINC_COMM_WORLD     MPI_COMM_WORLD
+#define PINC_COMM_SELF      MPI_COMM_SELF
+#define PINC_COMM_NULL      MPI_COMM_NULL
+#define PINC_INFO_NULL      MPI_INFO_NULL
+#define PINC_DATATYPE_NULL  MPI_DATATYPE_NULL
 
 #else
 #include <netcdf.h>
@@ -51,16 +51,16 @@ typedef MPI_Datatype PNC_Datatype;
 #define NC_ENOTBUILT (-128)
 #endif
 
-typedef struct PNC_Comm_obj    *PNC_Comm;
-typedef struct PNC_Info_obj    *PNC_Info;
-typedef struct PNC_Datatype_obj *PNC_Datatype;
-typedef long long PNC_Offset;
+typedef struct PINC_Comm_obj    *PINC_Comm;
+typedef struct PINC_Info_obj    *PINC_Info;
+typedef struct PINC_Datatype_obj *PINC_Datatype;
+typedef long long PINC_Offset;
 
-#define PNC_COMM_WORLD     ((PNC_Comm)0)
-#define PNC_COMM_SELF      ((PNC_Comm)1)
-#define PNC_COMM_NULL      ((PNC_Comm)0)
-#define PNC_INFO_NULL      ((PNC_Info)0)
-#define PNC_DATATYPE_NULL  ((PNC_Datatype)0)
+#define PINC_COMM_WORLD     ((PINC_Comm)0)
+#define PINC_COMM_SELF      ((PINC_Comm)1)
+#define PINC_COMM_NULL      ((PINC_Comm)0)
+#define PINC_INFO_NULL      ((PINC_Info)0)
+#define PINC_DATATYPE_NULL  ((PINC_Datatype)0)
 #endif
 
 #if defined(__cplusplus)
@@ -71,11 +71,11 @@ PNETCDF_PUBLIC_API const char*
 ncmpix_comm_backend(void);
 
 PNETCDF_PUBLIC_API int
-ncmpix_create(PNC_Comm comm, const char *path, int cmode, PNC_Info info,
+ncmpix_create(PINC_Comm comm, const char *path, int cmode, PINC_Info info,
               int *ncidp);
 
 PNETCDF_PUBLIC_API int
-ncmpix_open(PNC_Comm comm, const char *path, int omode, PNC_Info info,
+ncmpix_open(PINC_Comm comm, const char *path, int omode, PINC_Info info,
             int *ncidp);
 
 PNETCDF_PUBLIC_API const char*
@@ -85,34 +85,34 @@ PNETCDF_PUBLIC_API int
 ncmpix_close(int ncid);
 
 PNETCDF_PUBLIC_API int
-ncmpix_def_dim(int ncid, const char *name, PNC_Offset len, int *idp);
+ncmpix_def_dim(int ncid, const char *name, PINC_Offset len, int *idp);
 
 PNETCDF_PUBLIC_API int
 ncmpix_def_var(int ncid, const char *name, nc_type xtype, int ndims,
                const int *dimids, int *varidp);
 
 PNETCDF_PUBLIC_API int
-ncmpix_put_att_text(int ncid, int varid, const char *name, PNC_Offset len,
+ncmpix_put_att_text(int ncid, int varid, const char *name, PINC_Offset len,
                     const char *value);
 
 PNETCDF_PUBLIC_API int
 ncmpix_put_att_int(int ncid, int varid, const char *name, nc_type xtype,
-                   PNC_Offset len, const int *value);
+                   PINC_Offset len, const int *value);
 
 PNETCDF_PUBLIC_API int
 ncmpix_put_att_float(int ncid, int varid, const char *name, nc_type xtype,
-                     PNC_Offset len, const float *value);
+                     PINC_Offset len, const float *value);
 
 PNETCDF_PUBLIC_API int
 ncmpix_enddef(int ncid);
 
 PNETCDF_PUBLIC_API int
-ncmpix_put_vara_float_all(int ncid, int varid, const PNC_Offset *start,
-                          const PNC_Offset *count, const float *value);
+ncmpix_put_vara_float_all(int ncid, int varid, const PINC_Offset *start,
+                          const PINC_Offset *count, const float *value);
 
 PNETCDF_PUBLIC_API int
-ncmpix_iput_vara_float(int ncid, int varid, const PNC_Offset *start,
-                       const PNC_Offset *count, const float *value,
+ncmpix_iput_vara_float(int ncid, int varid, const PINC_Offset *start,
+                       const PINC_Offset *count, const float *value,
                        int *reqidp);
 
 PNETCDF_PUBLIC_API int

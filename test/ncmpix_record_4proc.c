@@ -27,16 +27,16 @@ int main(void) {
     int rank = atoi(getenv("RANK") ? getenv("RANK") : "0");
     int world = atoi(getenv("WORLD_SIZE") ? getenv("WORLD_SIZE") : "1");
     int req = -1, status = NC_NOERR;
-    PNC_Offset one_start[1] = {0}, one_count[1] = {1};
-    PNC_Offset start[2], count[2];
+    PINC_Offset one_start[1] = {0}, one_count[1] = {1};
+    PINC_Offset start[2], count[2];
     float time_value = 3.5f;
     float values[2];
 
     nerrs += check(world == 4, "expected four ranks");
     remove("ncmpix-record-4proc.nc");
 
-    nerrs += check_call(ncmpix_create(PNC_COMM_WORLD, "ncmpix-record-4proc.nc",
-                                      NC_CLOBBER, PNC_INFO_NULL, &ncid),
+    nerrs += check_call(ncmpix_create(PINC_COMM_WORLD, "ncmpix-record-4proc.nc",
+                                      NC_CLOBBER, PINC_INFO_NULL, &ncid),
                         "ncmpix_create");
     nerrs += check_call(ncmpix_def_dim(ncid, "time", NC_UNLIMITED, &dim_time),
                         "ncmpix_def_dim(time)");

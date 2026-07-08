@@ -1,101 +1,112 @@
-## PnetCDF source code development repository
-[![CI - OS and MPI](https://github.com/Parallel-NetCDF/PnetCDF/actions/workflows/main.yml/badge.svg)](https://github.com/Parallel-NetCDF/PnetCDF/actions/workflows/main.yml)
+# pinc
 
-PnetCDF is a parallel I/O library for accessing
-[Unidata's NetCDF](http://www.unidata.ucar.edu/software/netcdf) files in
-classic formats. The software development is a collaborative work of
-Northwestern University and Argonne National Laboratory.
+[![Continuous Integration](https://github.com/zoeyzyhu/pinc/actions/workflows/ci.yml/badge.svg)](https://github.com/zoeyzyhu/pinc/actions/workflows/ci.yml)
 
-* The original repository: https://svn.mcs.anl.gov/repos/parallel-netcdf
-* Since June 1, 2018, the PnetCDF repository has been migrated to
-  here on github.
+**pinc** is a parallel NetCDF I/O library that speaks
+[Unidata's NetCDF](https://www.unidata.ucar.edu/software/netcdf) classic
+formats (CDF-1/2/5) over a **UCX** transport instead of MPI. It is a fork of
+[PnetCDF](https://parallel-netcdf.github.io) whose communication layer has been
+abstracted so that ranks coordinate through
+[**commux**](https://github.com/zoeyzyhu/commux) — a UCX tag-matching
+`c10d` backend for `torch.distributed` — rather than MPI-IO. This lets NetCDF
+parallel I/O run inside the PyTorch / `torch.distributed` (snapy) ecosystem
+without an MPI runtime.
 
-### PnetCDF project home page
-* https://parallel-netcdf.github.io
-  contains more information about PnetCDF.
+pinc is packaged as a CPU-only, Linux-only Python wheel (UCX builds only on
+Linux) and installs alongside `commux` and `torch`.
 
-### PnetCDF official software releases
-* The latest release is
-  [pnetcdf-1.15.0.tar.gz](https://parallel-netcdf.github.io/Release/pnetcdf-1.15.0.tar.gz)
-  ([release note](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.15.0.md)),
-  available since July 1, 2026.
-* All **official released versions** can be found in
-  https://parallel-netcdf.github.io/wiki/Download.html
-* Note the ["releases"](https://github.com/Parallel-NetCDF/PnetCDF/releases)
-  link on this page above contains only tagged versions. They are by no means
-  official releases, but simply checkpoints. They contain unused historical
-  files. Users are recommended to download the official releases, not tagged
-  versions.
+## Relationship to commux
 
-### Build PnetCDF using source codes of this development repository
-* The source codes in this repository are constantly under development. They
-  should **NOT** be used for production runs.
-* Building PnetCDF using the source codes in this repository only if you are
-  interested in contributing the project and we welcome and appreciate any
-  contribution.
-* Required software
-  + MPI compilers, e.g. [MPICH](https://www.mpich.org) and
-    [OpenMPI](https://www.open-mpi.org)
-  + [autoconfig](https://www.gnu.org/software/autoconf) version 2.71
-  + [automake](https://www.gnu.org/software/automake) version 1.16.5
-  + [libtool](https://www.gnu.org/software/libtool) version 2.5.4
-  + [m4](https://www.gnu.org/software/m4) version 1.4.17
-* Clone, build, and installation commands:
-  ```console
-  git clone --recurse-submodules https://github.com/Parallel-NetCDF/PnetCDF.git
+pinc does not vendor a transport of its own. Its comm backend is built on
+commux:
 
-  cd PnetCDF
+```
+NetCDF classic I/O  (PnetCDF core)
+        |  generic PINC_Comm / PINC_Info / PINC_Datatype / PINC_Offset
+        v
+src/include/pnetcdf_comm.h(.in)      the backend seam (mpi | commux)
+src/include/pnetcdf_commux.h         small C ABI (pinc_commux_* / PINC_COMMUX_*)
+        v
+src/comm/pinc_commux_runtime.cpp     owns a c10d TCPStore + commux ProcessGroupUCX
+        v
+libcommux (+ bundled UCX) and libtorch   from the installed commux / torch
+```
 
-  autoreconf -i
+At build time pinc's CMake locates the installed `commux` and `torch` Python
+packages (plus system UCX headers and NetCDF). The wheel is thin: it links
+`libcommux`/`libtorch` at runtime via `$ORIGIN`-relative rpaths into the
+sibling `commux/` and `torch/` site-packages and vendors only `libnetcdf`.
+`import pinc` imports `torch` first so `libtorch` is mapped before `libcommux`
+loads.
 
-  ./configure --prefix=/install/path --with-mpi=/mpi/path
+torch is a hard dependency: `pinc_commux_runtime.cpp` uses `torch`/`c10d`
+(`c10d::TCPStore`, `c10d::ReduceOp`, `commux::ProcessGroupUCX`) directly. pinc
+is CPU-only, so the CPU build of torch is sufficient.
 
-  make install
-  ```
+## Install
 
-### Build instructions and recipes
-* Please refer to file [INSTALL](./INSTALL) for build instructions. There are
-  also several build recipes under folder [doc](./doc#readme) for a few popular
-  systems.
+```console
+pip install pinc
+```
 
-### Users documents
-* [C API references](https://parallel-netcdf.github.io/doc/c-reference/pnetcdf-c/index.html)
-* [Questions & Answers](https://parallel-netcdf.github.io/doc/faq.html)
-* [Utility Programs](./src/utils#readme)
-* [NetCDF4 vs. PnetCDF](./doc/netcdf4_vs_pnetcdf.md)
-* PnetCDF [blocking vs. non-blocking APIs](./doc/blocking_vs_nonblocking.md)
-* [CDL header API references](./doc/cdl_api_guide.md)
+This pulls in `commux` and `torch` (CPU). Linux x86_64, Python 3.10–3.13.
 
-### Mailing List
-* parallel-netcdf@mcs.anl.gov
-  + To subscribe, please visit the list information page
-    https://lists.mcs.anl.gov/mailman/listinfo/parallel-netcdf
-  + The past discussions in the mailing list are available in:
-    http://lists.mcs.anl.gov/pipermail/parallel-netcdf/.
+## Python usage
 
-### External links to some related projects and application users
-* [PnetCDF Python](https://github.com/Parallel-NetCDF/PnetCDF-Python),
-  a python interface to PnetCDF library.
-* [E3SM I/O kernel study](https://github.com/Parallel-NetCDF/E3SM-IO)
-* [Scorpio](https://github.com/E3SM-Project/scorpio), the I/O module of E3SM.
-* [PIO](https://github.com/NCAR/ParallelIO) - parallel I/O library at NCAR.
-* [WRF](https://github.com/wrf-model/WRF/tree/master/external/io_pnetcdf) -
-  Weather Research & Forecasting Model at NCAR.
+```python
+import pinc
 
+pinc.init_env("commux")          # initialise the commux runtime from the env
+print(pinc.rank(), pinc.size())
+pinc.barrier()
+total = pinc.allreduce_int64(pinc.rank(), pinc.ReduceOp.SUM)
+pinc.finalize()
 
-### Acknowledgements
-* Ongoing development and maintenance of PnetCDF-python is supported by the
-  U.S. Department of Energy's Office of Science, Scientific Discovery through
-  Advanced Computing (SciDAC) program, OASIS Institute.
-* From 2016 to 2023, the development and maintenance of PnetCDF was supported
-  by the [Exascale Computing Project](https://www.exascaleproject.org)
-  (17-SC-20-SC), a joint project of the U.S. Department of Energy's Office of
-  Science and National Nuclear Security Administration, responsible for
-  delivering a capable exascale ecosystem, including software, applications,
-  and hardware technology, to support the nation's exascale computing
-  imperative.
-* The PnetCDF project has been continuously supported by the U.S. Department of
-  Energy's Office of Science, Scientific Discovery through Advanced Computing
-  (SciDAC) program since its initiation in 2001.
+# packaged C headers / libs for building C consumers
+print(pinc.include_dir, pinc.library_dir)
+```
 
+The Python module is a thin binding over the `pinc_commux_*` C ABI declared in
+`src/include/pnetcdf_commux.h`.
 
+## Build from source
+
+Building the wheel needs the `commux` and `torch` packages importable (CMake
+reads them), plus system UCX headers (`ucp/api/ucp.h`) and NetCDF:
+
+```console
+# Debian/Ubuntu
+sudo apt-get install -y libucx-dev libnetcdf-dev pkg-config
+pip install 'torch==2.10.0' --index-url https://download.pytorch.org/whl/cpu
+pip install 'commux==0.2.1'
+
+git clone https://github.com/zoeyzyhu/pinc.git
+cd pinc
+# --no-build-isolation so CMake can import commux/torch
+pip install --no-build-isolation --no-deps .
+```
+
+The build is driven by `scikit-build-core`; select the backend with the CMake
+option `PNETCDF_COMM_BACKEND` (`commux`, `mpi`, or `auto`).
+
+## CI / CD / releases
+
+* **ci.yml** — pre-commit lint checks and a Linux build + import smoke test on
+  every push / PR to `main`.
+* **cd.yml** — on PR merge, computes the next version from the latest tag (plus
+  optional `release:major|minor|patch` labels), pushes the tag, and cuts a
+  GitHub Release. No version-bump commit — the version comes from the git tag
+  via `setuptools-scm`.
+* **release.yml** — a manual *Publish to PyPI* run for a given tag that builds
+  Linux wheels (cibuildwheel) and uploads them.
+
+## Acknowledgements
+
+pinc is derived from **PnetCDF**, a collaborative work of Northwestern
+University and Argonne National Laboratory
+([project page](https://parallel-netcdf.github.io),
+[repository](https://github.com/Parallel-NetCDF/PnetCDF)). The upstream PnetCDF
+license and copyright apply to the inherited sources; see
+[COPYRIGHT](./COPYRIGHT) and [COPYING](./COPYING). PnetCDF has been supported by
+the U.S. Department of Energy's Office of Science (SciDAC) and the Exascale
+Computing Project.

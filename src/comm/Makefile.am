@@ -10,14 +10,14 @@ AM_CPPFLAGS += @COMMUX_CPPFLAGS@
 
 AM_CFLAGS = @C_VISIBILITY_FLAGS@
 
-noinst_LTLIBRARIES = libpnccomm.la
+noinst_LTLIBRARIES = libpinccomm.la
 
 if COMM_BACKEND_COMMUX
-libpnccomm_la_SOURCES = pnc_comm_commux.c
+libpinccomm_la_SOURCES = pinc_comm_commux.c
 else
-libpnccomm_la_SOURCES = pnc_comm_mpi.c
+libpinccomm_la_SOURCES = pinc_comm_mpi.c
 endif
 
-EXTRA_DIST = pnc_comm_mpi.c pnc_comm_commux.c pnc_commux_runtime.cpp
+EXTRA_DIST = pinc_comm_mpi.c pinc_comm_commux.c pinc_commux_runtime.cpp
 
 tests-local: all
